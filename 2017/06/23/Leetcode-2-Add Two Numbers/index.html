@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Leetcode-6:ZigZag Conversion | 哈士奇的狗窝</title>
+  <title>Leetcode-2:Add Two Numbers | 哈士奇的狗窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述：Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the s">
-<meta name="keywords" content="C++,数组">
+  <meta name="description" content="问题描述：You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and ret">
+<meta name="keywords" content="C++,链表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode-6:ZigZag Conversion">
-<meta property="og:url" content="http://yoursite.com/2017/07/05/Leetcode-6-ZigZag Conversion/index.html">
+<meta property="og:title" content="Leetcode-2:Add Two Numbers">
+<meta property="og:url" content="http://yoursite.com/2017/06/23/Leetcode-2-Add Two Numbers/index.html">
 <meta property="og:site_name" content="哈士奇的狗窝">
-<meta property="og:description" content="问题描述：Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the s">
-<meta property="og:updated_time" content="2017-07-06T06:59:12.000Z">
+<meta property="og:description" content="问题描述：You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and ret">
+<meta property="og:updated_time" content="2017-07-06T07:00:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode-6:ZigZag Conversion">
-<meta name="twitter:description" content="问题描述：Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the s">
+<meta name="twitter:title" content="Leetcode-2:Add Two Numbers">
+<meta name="twitter:description" content="问题描述：You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and ret">
   
     <link rel="alternative" href="/atom.xml" title="哈士奇的狗窝" type="application/atom+xml">
   
@@ -164,31 +164,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Leetcode-6-ZigZag Conversion" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode-2-Add Two Numbers" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Leetcode-6:ZigZag Conversion
+      Leetcode-2:Add Two Numbers
     </h1>
   
 
         
-        <a href="/2017/07/05/Leetcode-6-ZigZag Conversion/" class="archive-article-date">
-  	<time datetime="2017-07-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
+        <a href="/2017/06/23/Leetcode-2-Add Two Numbers/" class="archive-article-date">
+  	<time datetime="2017-06-23T09:02:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.<br><a id="more"></a></p>
-<h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Given nums = [2, 7, 11, 15], target = 9,</div><div class="line"></div><div class="line">Because nums[0] + nums[1] = 2 + 7 = 9,&lt;/br&gt;</div><div class="line">return [0, 1].</div></pre></td></tr></table></figure>
-<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    string convert(string s, int numRows) &#123;</div><div class="line">        string output=&quot;&quot;;</div><div class="line">        string *rows= new string[numRows];</div><div class="line">        int i = 0;</div><div class="line">        int nCount = 2 * (numRows - 1);</div><div class="line">        if(numRows&lt;2)&#123;</div><div class="line">            while(i&lt;s.length())&#123;</div><div class="line">                for(int r=0;r&lt;numRows;r++)&#123;</div><div class="line">                rows[r].push_back(s[i]); </div><div class="line">                i++;</div><div class="line">            &#125;</div><div class="line">            &#125;    </div><div class="line">        &#125;else&#123;</div><div class="line">            </div><div class="line">            while(i&lt;s.length())&#123;</div><div class="line">                rows[numRows - 1 - abs((i%nCount)-numRows+1)].push_back(s[i]);</div><div class="line">                i++;</div><div class="line">            //下面的写法，想要创建n个数组，模拟插入n行文字，最后依次输出</div><div class="line">            // for(int i1=0;i1&lt;numRows;i1++)&#123;</div><div class="line">            //     rows[i1].push_back(s[i]);</div><div class="line">                // i++;</div><div class="line">            // &#125;</div><div class="line">            // for(int i2=numRows-2;i2&gt;0;i2--)&#123;</div><div class="line">            //     rows[i2].push_back(s[i]);</div><div class="line">            //     i++;</div><div class="line">            // &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int j =0;j&lt;numRows;j++)&#123;</div><div class="line">            output.append(rows[j]);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return output;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    string convert(string s, int numRows) &#123;</div><div class="line">        if(s.empty() || numRows &lt;= 1)</div><div class="line">        &#123;</div><div class="line">            return s;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        vector&lt;string&gt; levels(numRows);</div><div class="line">        </div><div class="line">        int level = 0;</div><div class="line">        int increment = -1;</div><div class="line">        for(int i = 0; i &lt; s.size(); ++i)</div><div class="line">        &#123;</div><div class="line">            levels[level] += s.at(i);</div><div class="line">            </div><div class="line">            if(level == 0 || level == numRows-1)</div><div class="line">            &#123;</div><div class="line">                increment = -increment;</div><div class="line">            &#125;</div><div class="line">            level += increment;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        string result;</div><div class="line">        for(int i=0; i &lt; levels.size(); ++i)</div><div class="line">        &#123;</div><div class="line">            result += levels[i];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
+<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+<a id="more"></a>
+<h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)&lt;/br&gt;</div><div class="line">Output: 7 -&gt; 0 -&gt; 8</div></pre></td></tr></table></figure>
+<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</div><div class="line">         ListNode* output = new ListNode(0);</div><div class="line">         ListNode* head = output;</div><div class="line">         ListNode* end;</div><div class="line">         int sign = 0;</div><div class="line">        while(l1&amp;&amp;l2)&#123;</div><div class="line">            if(l1-&gt;val + l2-&gt;val + sign&gt;= 10)&#123;</div><div class="line">                output-&gt;val = l1-&gt;val + l2-&gt;val - 10 + sign; </div><div class="line">                sign = 1;</div><div class="line">            &#125;else&#123;</div><div class="line">                output-&gt;val = l1-&gt;val + l2-&gt;val + sign;</div><div class="line">                sign = 0;</div><div class="line">            &#125;</div><div class="line">            ListNode* temp = new ListNode(0);</div><div class="line">            output-&gt;next = temp;</div><div class="line">            end = output;</div><div class="line">            output = output-&gt;next;</div><div class="line">            l1 = l1-&gt;next;</div><div class="line">            l2 = l2-&gt;next;</div><div class="line">        &#125;</div><div class="line">        while(l1)&#123;</div><div class="line">            if(l1-&gt;val + output-&gt;val + sign&gt;= 10)&#123;</div><div class="line">                output-&gt;val = l1-&gt;val + output-&gt;val - 10 + sign; </div><div class="line">                sign = 1;</div><div class="line">            &#125;else&#123;</div><div class="line">                output-&gt;val = l1-&gt;val + output-&gt;val + sign;</div><div class="line">                sign = 0;</div><div class="line">            &#125;</div><div class="line">            ListNode* temp = new ListNode(0);</div><div class="line">            output-&gt;next = temp;</div><div class="line">            end = output;</div><div class="line">            output = output-&gt;next;</div><div class="line">            l1 = l1-&gt;next;</div><div class="line">        &#125;</div><div class="line">        while(l2)&#123;</div><div class="line">            if(l2-&gt;val + output-&gt;val + sign&gt;= 10)&#123;</div><div class="line">                output-&gt;val = l2-&gt;val + output-&gt;val - 10 + sign; </div><div class="line">                sign = 1;</div><div class="line">            &#125;else&#123;</div><div class="line">                output-&gt;val = l2-&gt;val + output-&gt;val + sign;</div><div class="line">                sign = 0;</div><div class="line">            &#125;</div><div class="line">            ListNode* temp = new ListNode(0);</div><div class="line">            output-&gt;next = temp;</div><div class="line">            end = output;</div><div class="line">            output = output-&gt;next;</div><div class="line">            l2 = l2-&gt;next;</div><div class="line">        &#125;</div><div class="line">        if(sign == 1 &amp;&amp;! l1 &amp;&amp;! l2)&#123;</div><div class="line">            output-&gt;val = 1;</div><div class="line">            ListNode* temp = new ListNode(0);</div><div class="line">            output-&gt;next = temp;</div><div class="line">            end = output;</div><div class="line">            output = output-&gt;next;</div><div class="line">        &#125;</div><div class="line">        end-&gt;next = NULL;</div><div class="line">        return head;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</div><div class="line">        ListNode* ret = new ListNode(0);</div><div class="line">        ListNode* head = ret;</div><div class="line">        helper(l1, l2, ret, 0);</div><div class="line">        return head;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    void helper(ListNode* l1, ListNode* l2, ListNode* ret, int carry) &#123;        </div><div class="line">        int sum = carry;</div><div class="line">        if (l1 != NULL) &#123;</div><div class="line">            sum += l1 -&gt; val;</div><div class="line">            l1 = l1 -&gt; next;</div><div class="line">        &#125;</div><div class="line">        if (l2 != NULL) &#123;</div><div class="line">            sum += l2 -&gt; val;</div><div class="line">            l2 = l2 -&gt; next;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        ret -&gt; val = sum % 10;</div><div class="line">        carry = sum / 10;</div><div class="line">        if (l1 == NULL &amp;&amp; l2 == NULL &amp;&amp; carry == 0) return;</div><div class="line">        else &#123;</div><div class="line">            ret -&gt; next = new ListNode(0);</div><div class="line">            helper(l1, l2, ret -&gt; next, carry);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
       
 
       
@@ -205,7 +206,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
         		</li>
       		
 		</ul>
@@ -272,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/05/Leetcode-6-ZigZag Conversion/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/23/Leetcode-2-Add Two Numbers/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -286,9 +287,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2017/06/23/Leetcode-6-ZigZag Conversion/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Leetcode-6:ZigZag Conversion
+        
+      </div>
+    </a>
   
-    <a href="/2017/07/05/Leetcode-2-Add Two Numbers/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode-2:Add Two Numbers</div>
+  
+    <a href="/2017/06/23/Leetcode-7-Reverse Integer/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode-7:Reverse Integer</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -303,7 +313,7 @@
   
 
   
-  <div id="SOHUCS" sid="Leetcode-6-ZigZag Conversion" ></div> 
+  <div id="SOHUCS" sid="Leetcode-2-Add Two Numbers" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "cyt5fNttf"; 
@@ -409,11 +419,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
