@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Leetcode-6:ZigZag Conversion | 哈士奇的狗窝</title>
+  <title>Leetcode-5:Longest Palindromic Substring | 哈士奇的狗窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述：Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the s">
-<meta name="keywords" content="C++,数组">
+  <meta name="description" content="问题描述：Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
+<meta name="keywords" content="C++,数组,动态规划">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode-6:ZigZag Conversion">
-<meta property="og:url" content="http://yoursite.com/2017/06/23/Leetcode-6-ZigZag Conversion/index.html">
+<meta property="og:title" content="Leetcode-5:Longest Palindromic Substring">
+<meta property="og:url" content="http://yoursite.com/2017/07/05/Leetcode-5- Longest Palindromic Substring/index.html">
 <meta property="og:site_name" content="哈士奇的狗窝">
-<meta property="og:description" content="问题描述：Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the s">
-<meta property="og:updated_time" content="2017-07-06T07:01:20.000Z">
+<meta property="og:description" content="问题描述：Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
+<meta property="og:updated_time" content="2017-07-06T07:04:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode-6:ZigZag Conversion">
-<meta name="twitter:description" content="问题描述：Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the s">
+<meta name="twitter:title" content="Leetcode-5:Longest Palindromic Substring">
+<meta name="twitter:description" content="问题描述：Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
   
     <link rel="alternative" href="/atom.xml" title="哈士奇的狗窝" type="application/atom+xml">
   
@@ -164,31 +164,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Leetcode-6-ZigZag Conversion" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode-5- Longest Palindromic Substring" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Leetcode-6:ZigZag Conversion
+      Leetcode-5:Longest Palindromic Substring
     </h1>
   
 
         
-        <a href="/2017/06/23/Leetcode-6-ZigZag Conversion/" class="archive-article-date">
-  	<time datetime="2017-06-23T09:02:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-23</time>
+        <a href="/2017/07/05/Leetcode-5- Longest Palindromic Substring/" class="archive-article-date">
+  	<time datetime="2017-07-04T20:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.<br><a id="more"></a></p>
-<h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Given nums = [2, 7, 11, 15], target = 9,</div><div class="line"></div><div class="line">Because nums[0] + nums[1] = 2 + 7 = 9,&lt;/br&gt;</div><div class="line">return [0, 1].</div></pre></td></tr></table></figure>
-<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    string convert(string s, int numRows) &#123;</div><div class="line">        string output=&quot;&quot;;</div><div class="line">        string *rows= new string[numRows];</div><div class="line">        int i = 0;</div><div class="line">        int nCount = 2 * (numRows - 1);</div><div class="line">        if(numRows&lt;2)&#123;</div><div class="line">            while(i&lt;s.length())&#123;</div><div class="line">                for(int r=0;r&lt;numRows;r++)&#123;</div><div class="line">                rows[r].push_back(s[i]); </div><div class="line">                i++;</div><div class="line">            &#125;</div><div class="line">            &#125;    </div><div class="line">        &#125;else&#123;</div><div class="line">            </div><div class="line">            while(i&lt;s.length())&#123;</div><div class="line">                rows[numRows - 1 - abs((i%nCount)-numRows+1)].push_back(s[i]);</div><div class="line">                i++;</div><div class="line">            //下面的写法，想要创建n个数组，模拟插入n行文字，最后依次输出</div><div class="line">            // for(int i1=0;i1&lt;numRows;i1++)&#123;</div><div class="line">            //     rows[i1].push_back(s[i]);</div><div class="line">                // i++;</div><div class="line">            // &#125;</div><div class="line">            // for(int i2=numRows-2;i2&gt;0;i2--)&#123;</div><div class="line">            //     rows[i2].push_back(s[i]);</div><div class="line">            //     i++;</div><div class="line">            // &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int j =0;j&lt;numRows;j++)&#123;</div><div class="line">            output.append(rows[j]);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return output;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    string convert(string s, int numRows) &#123;</div><div class="line">        if(s.empty() || numRows &lt;= 1)</div><div class="line">        &#123;</div><div class="line">            return s;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        vector&lt;string&gt; levels(numRows);</div><div class="line">        </div><div class="line">        int level = 0;</div><div class="line">        int increment = -1;</div><div class="line">        for(int i = 0; i &lt; s.size(); ++i)</div><div class="line">        &#123;</div><div class="line">            levels[level] += s.at(i);</div><div class="line">            </div><div class="line">            if(level == 0 || level == numRows-1)</div><div class="line">            &#123;</div><div class="line">                increment = -increment;</div><div class="line">            &#125;</div><div class="line">            level += increment;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        string result;</div><div class="line">        for(int i=0; i &lt; levels.size(); ++i)</div><div class="line">        &#123;</div><div class="line">            result += levels[i];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.<br><a id="more"></a></p>
+<h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Input: &quot;babad&quot;</div><div class="line">Output: &quot;bab&quot;</div><div class="line"></div><div class="line">Note: &quot;aba&quot; is also a valid answer.</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Input: &quot;cbbd&quot;</div><div class="line">Output: &quot;bb&quot;</div></pre></td></tr></table></figure>
+<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    string longestPalindrome(string s) &#123;</div><div class="line">        string output=&quot;&quot;;</div><div class="line">        string temp=&quot;&quot;;</div><div class="line">        </div><div class="line">        for(int i=0;i&lt;s.length();i++)&#123;</div><div class="line">            temp = getLongestPalindrome(s,i);</div><div class="line">            if(temp.length()&gt;output.length())&#123;</div><div class="line">                output = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return output;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    string getLongestPalindrome(string s,int i)&#123;</div><div class="line">        string max;</div><div class="line">        string output;</div><div class="line">        output.insert(output.begin(),s[i]);</div><div class="line">        int sign = 1;</div><div class="line">        while(i-sign&gt;=0&amp;&amp;i+sign&lt;s.length())&#123;</div><div class="line">            if(s[i-sign]==s[i+sign])&#123;</div><div class="line">                output.insert(output.begin(),s[i-sign]);</div><div class="line">                output.insert(output.end(),s[i+sign]);</div><div class="line">                sign ++;</div><div class="line">            &#125;else&#123;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        max = output;</div><div class="line">        output.clear();</div><div class="line">        sign = 1;</div><div class="line">        </div><div class="line">        if(i+1&lt;s.length())&#123;</div><div class="line">            if(s[i+1] == s[i])&#123;</div><div class="line">                output.insert(output.begin(),s[i]);</div><div class="line">                output.insert(output.begin(),s[i+1]);</div><div class="line">                while(i-sign&gt;=0&amp;&amp;i+sign&lt;s.length())&#123;</div><div class="line">                    if(s[i-sign]==s[i+1+sign])&#123;</div><div class="line">                        output.insert(output.begin(),s[i-sign]);</div><div class="line">                        output.insert(output.end(),s[i+1+sign]);</div><div class="line">                        sign ++;</div><div class="line">                    &#125;else&#123;</div><div class="line">                        break;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        if(max.length()&lt;output.length())&#123;</div><div class="line">            max = output;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return max;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//使用动态规划思想</div><div class="line">#include &lt;string&gt;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    string longestPalindrome(string s) </div><div class="line">    &#123;</div><div class="line">        if (s.empty()) return &quot;&quot;;</div><div class="line">        if (s.size() == 1) return s;</div><div class="line">        int min_start = 0, max_len = 1;</div><div class="line">        for (int i = 0; i &lt; s.size();) &#123;</div><div class="line">          if (s.size() - i &lt;= max_len / 2) break;</div><div class="line">          int j = i, k = i;</div><div class="line">          while (k &lt; s.size()-1 &amp;&amp; s[k+1] == s[k]) ++k; // Skip duplicate characters.</div><div class="line">          i = k+1;</div><div class="line">          while (k &lt; s.size()-1 &amp;&amp; j &gt; 0 &amp;&amp; s[k + 1] == s[j - 1]) &#123; ++k; --j; &#125; // Expand.</div><div class="line">          int new_len = k - j + 1;</div><div class="line">          if (new_len &gt; max_len) &#123; min_start = j; max_len = new_len; &#125;</div><div class="line">        &#125;</div><div class="line">        return s.substr(min_start, max_len);</div><div class="line">    &#125;    </div><div class="line">    </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+
       
 
       
@@ -206,6 +207,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
         		</li>
       		
 		</ul>
@@ -272,7 +277,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/23/Leetcode-6-ZigZag Conversion/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/05/Leetcode-5- Longest Palindromic Substring/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -286,18 +291,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/23/Leetcode-5- Longest Palindromic Substring/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/07/05/Leetcode-6-ZigZag Conversion/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Leetcode-5:Longest Palindromic Substring
+          Leetcode-6:ZigZag Conversion
         
       </div>
     </a>
   
   
-    <a href="/2017/06/23/Leetcode-2-Add Two Numbers/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode-2:Add Two Numbers</div>
+    <a href="/2017/07/05/Leetcode-4-Median of Two Sorted Arrays/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode-4:Median of Two Sorted Arrays Characters</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -312,7 +317,7 @@
   
 
   
-  <div id="SOHUCS" sid="Leetcode-6-ZigZag Conversion" ></div> 
+  <div id="SOHUCS" sid="Leetcode-5- Longest Palindromic Substring" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "cyt5fNttf"; 

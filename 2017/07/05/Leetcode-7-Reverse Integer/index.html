@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Leetcode-3:Longest Substring Without Repeating Characters | 哈士奇的狗窝</title>
+  <title>Leetcode-7:Reverse Integer | 哈士奇的狗窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述：Given a string, find the length of the longest substring without repeating characters.">
-<meta name="keywords" content="C++,数组">
+  <meta name="description" content="问题描述：Reverse digits of an integer. Have you thought about this?Here are some good questions to ask before coding. Bonus points for you if you have already thought through this!If the integer’s last di">
+<meta name="keywords" content="C++,溢出判断">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode-3:Longest Substring Without Repeating Characters">
-<meta property="og:url" content="http://yoursite.com/2017/06/23/Leetcode-3-Longest Substring Without Repeating Characters/index.html">
+<meta property="og:title" content="Leetcode-7:Reverse Integer">
+<meta property="og:url" content="http://yoursite.com/2017/07/05/Leetcode-7-Reverse Integer/index.html">
 <meta property="og:site_name" content="哈士奇的狗窝">
-<meta property="og:description" content="问题描述：Given a string, find the length of the longest substring without repeating characters.">
-<meta property="og:updated_time" content="2017-07-06T07:01:03.000Z">
+<meta property="og:description" content="问题描述：Reverse digits of an integer. Have you thought about this?Here are some good questions to ask before coding. Bonus points for you if you have already thought through this!If the integer’s last di">
+<meta property="og:updated_time" content="2017-07-06T07:04:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode-3:Longest Substring Without Repeating Characters">
-<meta name="twitter:description" content="问题描述：Given a string, find the length of the longest substring without repeating characters.">
+<meta name="twitter:title" content="Leetcode-7:Reverse Integer">
+<meta name="twitter:description" content="问题描述：Reverse digits of an integer. Have you thought about this?Here are some good questions to ask before coding. Bonus points for you if you have already thought through this!If the integer’s last di">
   
     <link rel="alternative" href="/atom.xml" title="哈士奇的狗窝" type="application/atom+xml">
   
@@ -164,31 +164,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Leetcode-3-Longest Substring Without Repeating Characters" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode-7-Reverse Integer" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Leetcode-3:Longest Substring Without Repeating Characters
+      Leetcode-7:Reverse Integer
     </h1>
   
 
         
-        <a href="/2017/06/23/Leetcode-3-Longest Substring Without Repeating Characters/" class="archive-article-date">
-  	<time datetime="2017-06-23T09:02:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-23</time>
+        <a href="/2017/07/05/Leetcode-7-Reverse Integer/" class="archive-article-date">
+  	<time datetime="2017-07-04T22:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Given a string, find the length of the longest substring without repeating characters.</p>
+        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Reverse digits of an integer.</p>
+<p><strong>Have you thought about this?</strong><br><br>Here are some good questions to ask before coding. Bonus points for you if you have already thought through this!<br><br>If the integer’s last digit is 0, what should the output be? ie, cases such as 10, 100.<br><br>Did you notice that the reversed integer might overflow? Assume the input is a 32-bit integer, then the reverse of 1000000003 overflows. How should you handle such cases?<br><br>For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.</p>
+<p><strong>Note:</strong><br>The input is assumed to be a 32-bit signed integer. Your function should return 0 when the reversed integer overflows.</p>
 <a id="more"></a>
-<h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><p>Given <strong>“abcabcbb”</strong>, the answer is <strong>“abc”</strong>, which the length is 3.<br>Given <strong>“bbbbb”</strong>, the answer is <strong>“b”</strong>, with the length of 1.<br>Given <strong>“pwwkew”</strong>, the answer is <strong>“wke”</strong>, with the length of 3. <br>Note that the answer must be a substring, “pwke” is a subsequence and not a substring.</p>
-<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int lengthOfLongestSubstring(string s) &#123;</div><div class="line">        int max=0;</div><div class="line">        int start = 0;</div><div class="line">        int end;</div><div class="line">        int length;</div><div class="line">        if(s.size()&lt;2)&#123;</div><div class="line">            max = s.size();</div><div class="line">        &#125;</div><div class="line">        int i=0;</div><div class="line">        for(i;i&lt;s.size();i++)&#123;</div><div class="line">            end = i;</div><div class="line">            if(i&gt;0)&#123;</div><div class="line">                if(strchr(s.substr(start, end - start), s[i]) != -1)&#123;</div><div class="line">                length = end - start;</div><div class="line">                if(length &gt;max)&#123;</div><div class="line">                    max = length;</div><div class="line">                &#125;</div><div class="line">                start = strchr(s.substr(start, end - start), s[i]) + start + 1;</div><div class="line">                &#125; </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        length = i - start;</div><div class="line">        if(length&gt;max)&#123;</div><div class="line">            max = length;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return max;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    int strchr(string s,char a)&#123;</div><div class="line">        int have = -1;</div><div class="line">        for(int i=0;i&lt;s.size();i++)&#123;</div><div class="line">            if(s[i] == a)&#123;</div><div class="line">                have = i;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return have;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int lengthOfLongestSubstring(string s) &#123;</div><div class="line">        int start=0, count=0;</div><div class="line">        bool check[128]=&#123;false&#125;;</div><div class="line">        for(int i=0; i&lt;s.length();i++)&#123;</div><div class="line">            if(check[s[i]])&#123;</div><div class="line">                count=max(count,i-start);</div><div class="line">                while(check[s[i]])</div><div class="line">                    check[s[start++]]=false;</div><div class="line">            &#125;</div><div class="line">            check[s[i]]=true;</div><div class="line">        &#125;</div><div class="line">        count=max(count,(int)(s.length()-start));</div><div class="line">        return count;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Example1: x = 123, return 321</div><div class="line">Example2: x = -123, return -321</div></pre></td></tr></table></figure>
+<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int reverse(int x) &#123;</div><div class="line">        int y = 0;</div><div class="line">        int temp;</div><div class="line">        int oldy = 0;</div><div class="line">        </div><div class="line">        while(x != 0)&#123;</div><div class="line">            temp = x -(x/10)*10;</div><div class="line">            oldy = y;</div><div class="line">            y = y*10 + temp;</div><div class="line">            x = x/10;</div><div class="line">            if((y-temp)/10 != oldy)&#123;</div><div class="line">                return 0;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        // if(y&gt;intmax||y&lt;intmin)&#123;</div><div class="line">        //     y = 0;</div><div class="line">        // &#125;</div><div class="line">        </div><div class="line">        return y;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int reverse(int x) &#123;</div><div class="line">        int sign = (x&lt;0)?-1:1;</div><div class="line">        long int num = x * sign;</div><div class="line">        int j = 0;</div><div class="line">        long int result = 0;</div><div class="line">        while (num) &#123;</div><div class="line">            result = result*10 + (num%10);</div><div class="line">            num /= 10;</div><div class="line">        &#125;</div><div class="line">        result *= sign;</div><div class="line">        if ( result &gt; INT_MAX || result &lt; INT_MIN) result = 0;</div><div class="line"></div><div class="line">        return result;</div><div class="line">        </div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
       
 
       
@@ -205,7 +207,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">溢出判断</a>
         		</li>
       		
 		</ul>
@@ -272,7 +274,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/23/Leetcode-3-Longest Substring Without Repeating Characters/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/05/Leetcode-7-Reverse Integer/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -286,18 +288,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/23/Leetcode-1-Two Sum/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/07/05/Leetcode-8-String to Integer (atoi)/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Leetcode-1:Two Su0m
+          Leetcode-8:String to Integer (atoi)
         
       </div>
     </a>
   
   
-    <a href="/2017/06/23/Leetcode-4-Median of Two Sorted Arrays/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode-4:Median of Two Sorted Arrays Characters</div>
+    <a href="/2017/07/05/Leetcode-6-ZigZag Conversion/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode-6:ZigZag Conversion</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -312,7 +314,7 @@
   
 
   
-  <div id="SOHUCS" sid="Leetcode-3-Longest Substring Without Repeating Characters" ></div> 
+  <div id="SOHUCS" sid="Leetcode-7-Reverse Integer" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "cyt5fNttf"; 
