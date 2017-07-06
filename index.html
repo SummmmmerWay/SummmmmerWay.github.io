@@ -161,19 +161,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Leetcode-2-Add Two Numbers" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Leetcode-7-Reverse Integer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/05/Leetcode-2-Add Two Numbers/">Leetcode-2:Add Two Numbers</a>
+      <a class="article-title" href="/2017/07/05/Leetcode-7-Reverse Integer/">Leetcode-7:Reverse Integer</a>
     </h1>
   
 
         
-        <a href="/2017/07/05/Leetcode-2-Add Two Numbers/" class="archive-article-date">
+        <a href="/2017/07/05/Leetcode-7-Reverse Integer/" class="archive-article-date">
   	<time datetime="2017-07-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
 </a>
         
@@ -181,11 +181,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
-<h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)&lt;/br&gt;</div><div class="line">Output: 7 -&gt; 0 -&gt; 8</div></pre></td></tr></table></figure>
-<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</div><div class="line">         ListNode* output = new ListNode(0);</div><div class="line">         ListNode* head = output;</div><div class="line">         ListNode* end;</div><div class="line">         int sign = 0;</div><div class="line">        while(l1&amp;&amp;l2)&#123;</div><div class="line">            if(l1-&gt;val + l2-&gt;val + sign&gt;= 10)&#123;</div><div class="line">                output-&gt;val = l1-&gt;val + l2-&gt;val - 10 + sign; </div><div class="line">                sign = 1;</div><div class="line">            &#125;else&#123;</div><div class="line">                output-&gt;val = l1-&gt;val + l2-&gt;val + sign;</div><div class="line">                sign = 0;</div><div class="line">            &#125;</div><div class="line">            ListNode* temp = new ListNode(0);</div><div class="line">            output-&gt;next = temp;</div><div class="line">            end = output;</div><div class="line">            output = output-&gt;next;</div><div class="line">            l1 = l1-&gt;next;</div><div class="line">            l2 = l2-&gt;next;</div><div class="line">        &#125;</div><div class="line">        while(l1)&#123;</div><div class="line">            if(l1-&gt;val + output-&gt;val + sign&gt;= 10)&#123;</div><div class="line">                output-&gt;val = l1-&gt;val + output-&gt;val - 10 + sign; </div><div class="line">                sign = 1;</div><div class="line">            &#125;else&#123;</div><div class="line">                output-&gt;val = l1-&gt;val + output-&gt;val + sign;</div><div class="line">                sign = 0;</div><div class="line">            &#125;</div><div class="line">            ListNode* temp = new ListNode(0);</div><div class="line">            output-&gt;next = temp;</div><div class="line">            end = output;</div><div class="line">            output = output-&gt;next;</div><div class="line">            l1 = l1-&gt;next;</div><div class="line">        &#125;</div><div class="line">        while(l2)&#123;</div><div class="line">            if(l2-&gt;val + output-&gt;val + sign&gt;= 10)&#123;</div><div class="line">                output-&gt;val = l2-&gt;val + output-&gt;val - 10 + sign; </div><div class="line">                sign = 1;</div><div class="line">            &#125;else&#123;</div><div class="line">                output-&gt;val = l2-&gt;val + output-&gt;val + sign;</div><div class="line">                sign = 0;</div><div class="line">            &#125;</div><div class="line">            ListNode* temp = new ListNode(0);</div><div class="line">            output-&gt;next = temp;</div><div class="line">            end = output;</div><div class="line">            output = output-&gt;next;</div><div class="line">            l2 = l2-&gt;next;</div><div class="line">        &#125;</div><div class="line">        if(sign == 1 &amp;&amp;! l1 &amp;&amp;! l2)&#123;</div><div class="line">            output-&gt;val = 1;</div><div class="line">            ListNode* temp = new ListNode(0);</div><div class="line">            output-&gt;next = temp;</div><div class="line">            end = output;</div><div class="line">            output = output-&gt;next;</div><div class="line">        &#125;</div><div class="line">        end-&gt;next = NULL;</div><div class="line">        return head;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</div><div class="line">        ListNode* ret = new ListNode(0);</div><div class="line">        ListNode* head = ret;</div><div class="line">        helper(l1, l2, ret, 0);</div><div class="line">        return head;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    void helper(ListNode* l1, ListNode* l2, ListNode* ret, int carry) &#123;        </div><div class="line">        int sum = carry;</div><div class="line">        if (l1 != NULL) &#123;</div><div class="line">            sum += l1 -&gt; val;</div><div class="line">            l1 = l1 -&gt; next;</div><div class="line">        &#125;</div><div class="line">        if (l2 != NULL) &#123;</div><div class="line">            sum += l2 -&gt; val;</div><div class="line">            l2 = l2 -&gt; next;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        ret -&gt; val = sum % 10;</div><div class="line">        carry = sum / 10;</div><div class="line">        if (l1 == NULL &amp;&amp; l2 == NULL &amp;&amp; carry == 0) return;</div><div class="line">        else &#123;</div><div class="line">            ret -&gt; next = new ListNode(0);</div><div class="line">            helper(l1, l2, ret -&gt; next, carry);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Reverse digits of an integer.</p>
+<p><strong>Have you thought about this?</strong><br><br>Here are some good questions to ask before coding. Bonus points for you if you have already thought through this!<br><br>If the integer’s last digit is 0, what should the output be? ie, cases such as 10, 100.<br><br>Did you notice that the reversed integer might overflow? Assume the input is a 32-bit integer, then the reverse of 1000000003 overflows. How should you handle such cases?<br><br>For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.</p>
+<p><strong>Note:</strong><br>The input is assumed to be a 32-bit signed integer. Your function should return 0 when the reversed integer overflows.</p>
+<h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Example1: x = 123, return 321</div><div class="line">Example2: x = -123, return -321</div></pre></td></tr></table></figure>
+<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int reverse(int x) &#123;</div><div class="line">        int y = 0;</div><div class="line">        int temp;</div><div class="line">        int oldy = 0;</div><div class="line">        </div><div class="line">        while(x != 0)&#123;</div><div class="line">            temp = x -(x/10)*10;</div><div class="line">            oldy = y;</div><div class="line">            y = y*10 + temp;</div><div class="line">            x = x/10;</div><div class="line">            if((y-temp)/10 != oldy)&#123;</div><div class="line">                return 0;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        // if(y&gt;intmax||y&lt;intmin)&#123;</div><div class="line">        //     y = 0;</div><div class="line">        // &#125;</div><div class="line">        </div><div class="line">        return y;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int reverse(int x) &#123;</div><div class="line">        int sign = (x&lt;0)?-1:1;</div><div class="line">        long int num = x * sign;</div><div class="line">        int j = 0;</div><div class="line">        long int result = 0;</div><div class="line">        while (num) &#123;</div><div class="line">            result = result*10 + (num%10);</div><div class="line">            num /= 10;</div><div class="line">        &#125;</div><div class="line">        result *= sign;</div><div class="line">        if ( result &gt; INT_MAX || result &lt; INT_MIN) result = 0;</div><div class="line"></div><div class="line">        return result;</div><div class="line">        </div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
       
 
       
@@ -199,10 +200,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
         		</li>
       		
 		</ul>
@@ -223,7 +220,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/05/Leetcode-2-Add Two Numbers/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/07/05/Leetcode-7-Reverse Integer/">展开全文 >></a>
         </p>
       
 
@@ -469,19 +466,19 @@
 
 
   
-    <article id="post-Leetcode-8-String to Integer (atoi)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Leetcode-5- Longest Palindromic Substring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/05/Leetcode-8-String to Integer (atoi)/">Leetcode-8:String to Integer (atoi)</a>
+      <a class="article-title" href="/2017/07/05/Leetcode-5- Longest Palindromic Substring/">Leetcode-5:Longest Palindromic Substring</a>
     </h1>
   
 
         
-        <a href="/2017/07/05/Leetcode-8-String to Integer (atoi)/" class="archive-article-date">
+        <a href="/2017/07/05/Leetcode-5- Longest Palindromic Substring/" class="archive-article-date">
   	<time datetime="2017-07-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
 </a>
         
@@ -489,12 +486,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Implement atoi to convert a string to an integer.</p>
-<p><strong>Hint:</strong> Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself what are the possible input cases.</p>
-<p><strong>Notes:</strong> It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible to gather all the input requirements up front.</p>
-<p><strong>Requirements for atoi:</strong><br><br>The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.<br><br>The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.<br><br>If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.<br>If no valid conversion could be performed, a zero value is returned. If the correct value is out of the range of representable values, INT_MAX (2147483647) or INT_MIN (-2147483648) is returned.</p>
-<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int myAtoi(string str) &#123;</div><div class="line">    int output = 0;</div><div class="line">    int oldoutput = 0;  //用于判断是否越界</div><div class="line">    int sign = 1;</div><div class="line">    bool issign = true; //是否没有添加符号</div><div class="line">    bool saved = true;  //是否没有存过数字</div><div class="line">    </div><div class="line">    int j = 0;</div><div class="line">    </div><div class="line">    while(j&lt;str.length())&#123;</div><div class="line">        if(47&lt;str[j]&amp;&amp;str[j]&lt;58)&#123;   //ASCII比较数字</div><div class="line">            int temp = str[j] - 48;</div><div class="line">            if(saved)&#123;</div><div class="line">                saved = false;</div><div class="line">            &#125;</div><div class="line">            j++;</div><div class="line">            oldoutput = output;</div><div class="line">            output = output*10+temp;</div><div class="line">            </div><div class="line">            </div><div class="line">            if(oldoutput*sign &gt; 214748364||(oldoutput*sign == 214748364 &amp;&amp; temp&gt;7))&#123;</div><div class="line">                return 2147483647;</div><div class="line">            &#125;else if(oldoutput*sign &lt; -214748364||(oldoutput*sign == -214748364 &amp;&amp; temp&gt;8))&#123;</div><div class="line">                return -2147483648;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;else if(str[j] == &apos;.&apos;)&#123;</div><div class="line">            return output*sign;</div><div class="line">        &#125;else if(str[j] == &apos; &apos;&amp;&amp;saved)&#123;    //判断字符读取结束</div><div class="line">            j++;</div><div class="line">        &#125;else if(str[j]==&apos;-&apos;&amp;&amp;issign)&#123;    //判断字符读取结束，并带符号</div><div class="line">            sign = -1;</div><div class="line">            if(saved)&#123;</div><div class="line">                saved = false;</div><div class="line">            &#125;</div><div class="line">            issign = false;</div><div class="line">            j++;</div><div class="line">        &#125;else if(str[j]==&apos;+&apos;&amp;&amp;issign)&#123;    //判断字符读取结束，并带符号</div><div class="line">            sign = 1;</div><div class="line">            if(saved)&#123;</div><div class="line">                saved = false;</div><div class="line">            &#125;</div><div class="line">            issign = false;</div><div class="line">            j++;</div><div class="line">        &#125;else&#123;</div><div class="line">            return output*sign;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return output*sign;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int myAtoi(string str) &#123;</div><div class="line">        </div><div class="line">        long result = 0;</div><div class="line">        int indicator = 1;</div><div class="line">        </div><div class="line">        int i = 0;</div><div class="line">        </div><div class="line">        while (str[i] == &apos; &apos;) &#123; i++; &#125;</div><div class="line">            </div><div class="line">        if(str[i] == &apos;-&apos; || str[i] == &apos;+&apos;)&#123;</div><div class="line"></div><div class="line">            indicator = (str[i] == &apos;-&apos;)? -1 : 1;</div><div class="line">            cout &lt;&lt; str[i]&lt;&lt;endl;</div><div class="line">            i++;</div><div class="line">        &#125;</div><div class="line">        while(str[i] &gt;= &apos;0&apos; &amp;&amp; str[i] &lt;= &apos;9&apos;)&#123;</div><div class="line"></div><div class="line">            result = result*10 + (str[i++]-&apos;0&apos;);</div><div class="line">            //i ++;</div><div class="line"></div><div class="line">            if(result*indicator &gt;= INT_MAX) return INT_MAX;</div><div class="line">            if(result*indicator &lt;= INT_MIN) return INT_MIN;  </div><div class="line">        &#125;</div><div class="line"></div><div class="line">        return result*indicator;</div><div class="line">        </div><div class="line">       </div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.</p>
+<h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Input: &quot;babad&quot;</div><div class="line">Output: &quot;bab&quot;</div><div class="line"></div><div class="line">Note: &quot;aba&quot; is also a valid answer.</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Input: &quot;cbbd&quot;</div><div class="line">Output: &quot;bb&quot;</div></pre></td></tr></table></figure>
+<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    string longestPalindrome(string s) &#123;</div><div class="line">        string output=&quot;&quot;;</div><div class="line">        string temp=&quot;&quot;;</div><div class="line">        </div><div class="line">        for(int i=0;i&lt;s.length();i++)&#123;</div><div class="line">            temp = getLongestPalindrome(s,i);</div><div class="line">            if(temp.length()&gt;output.length())&#123;</div><div class="line">                output = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return output;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    string getLongestPalindrome(string s,int i)&#123;</div><div class="line">        string max;</div><div class="line">        string output;</div><div class="line">        output.insert(output.begin(),s[i]);</div><div class="line">        int sign = 1;</div><div class="line">        while(i-sign&gt;=0&amp;&amp;i+sign&lt;s.length())&#123;</div><div class="line">            if(s[i-sign]==s[i+sign])&#123;</div><div class="line">                output.insert(output.begin(),s[i-sign]);</div><div class="line">                output.insert(output.end(),s[i+sign]);</div><div class="line">                sign ++;</div><div class="line">            &#125;else&#123;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        max = output;</div><div class="line">        output.clear();</div><div class="line">        sign = 1;</div><div class="line">        </div><div class="line">        if(i+1&lt;s.length())&#123;</div><div class="line">            if(s[i+1] == s[i])&#123;</div><div class="line">                output.insert(output.begin(),s[i]);</div><div class="line">                output.insert(output.begin(),s[i+1]);</div><div class="line">                while(i-sign&gt;=0&amp;&amp;i+sign&lt;s.length())&#123;</div><div class="line">                    if(s[i-sign]==s[i+1+sign])&#123;</div><div class="line">                        output.insert(output.begin(),s[i-sign]);</div><div class="line">                        output.insert(output.end(),s[i+1+sign]);</div><div class="line">                        sign ++;</div><div class="line">                    &#125;else&#123;</div><div class="line">                        break;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        if(max.length()&lt;output.length())&#123;</div><div class="line">            max = output;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return max;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//使用动态规划思想</div><div class="line">#include &lt;string&gt;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    string longestPalindrome(string s) </div><div class="line">    &#123;</div><div class="line">        if (s.empty()) return &quot;&quot;;</div><div class="line">        if (s.size() == 1) return s;</div><div class="line">        int min_start = 0, max_len = 1;</div><div class="line">        for (int i = 0; i &lt; s.size();) &#123;</div><div class="line">          if (s.size() - i &lt;= max_len / 2) break;</div><div class="line">          int j = i, k = i;</div><div class="line">          while (k &lt; s.size()-1 &amp;&amp; s[k+1] == s[k]) ++k; // Skip duplicate characters.</div><div class="line">          i = k+1;</div><div class="line">          while (k &lt; s.size()-1 &amp;&amp; j &gt; 0 &amp;&amp; s[k + 1] == s[j - 1]) &#123; ++k; --j; &#125; // Expand.</div><div class="line">          int new_len = k - j + 1;</div><div class="line">          if (new_len &gt; max_len) &#123; min_start = j; max_len = new_len; &#125;</div><div class="line">        &#125;</div><div class="line">        return s.substr(min_start, max_len);</div><div class="line">    &#125;    </div><div class="line">    </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+
       
 
       
@@ -508,6 +505,14 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
         		</li>
       		
 		</ul>
@@ -528,7 +533,84 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/05/Leetcode-8-String to Integer (atoi)/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/07/05/Leetcode-5- Longest Palindromic Substring/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Leetcode-2-Add Two Numbers" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/05/Leetcode-2-Add Two Numbers/">Leetcode-2:Add Two Numbers</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/05/Leetcode-2-Add Two Numbers/" class="archive-article-date">
+  	<time datetime="2017-07-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
+<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+<h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)&lt;/br&gt;</div><div class="line">Output: 7 -&gt; 0 -&gt; 8</div></pre></td></tr></table></figure>
+<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</div><div class="line">         ListNode* output = new ListNode(0);</div><div class="line">         ListNode* head = output;</div><div class="line">         ListNode* end;</div><div class="line">         int sign = 0;</div><div class="line">        while(l1&amp;&amp;l2)&#123;</div><div class="line">            if(l1-&gt;val + l2-&gt;val + sign&gt;= 10)&#123;</div><div class="line">                output-&gt;val = l1-&gt;val + l2-&gt;val - 10 + sign; </div><div class="line">                sign = 1;</div><div class="line">            &#125;else&#123;</div><div class="line">                output-&gt;val = l1-&gt;val + l2-&gt;val + sign;</div><div class="line">                sign = 0;</div><div class="line">            &#125;</div><div class="line">            ListNode* temp = new ListNode(0);</div><div class="line">            output-&gt;next = temp;</div><div class="line">            end = output;</div><div class="line">            output = output-&gt;next;</div><div class="line">            l1 = l1-&gt;next;</div><div class="line">            l2 = l2-&gt;next;</div><div class="line">        &#125;</div><div class="line">        while(l1)&#123;</div><div class="line">            if(l1-&gt;val + output-&gt;val + sign&gt;= 10)&#123;</div><div class="line">                output-&gt;val = l1-&gt;val + output-&gt;val - 10 + sign; </div><div class="line">                sign = 1;</div><div class="line">            &#125;else&#123;</div><div class="line">                output-&gt;val = l1-&gt;val + output-&gt;val + sign;</div><div class="line">                sign = 0;</div><div class="line">            &#125;</div><div class="line">            ListNode* temp = new ListNode(0);</div><div class="line">            output-&gt;next = temp;</div><div class="line">            end = output;</div><div class="line">            output = output-&gt;next;</div><div class="line">            l1 = l1-&gt;next;</div><div class="line">        &#125;</div><div class="line">        while(l2)&#123;</div><div class="line">            if(l2-&gt;val + output-&gt;val + sign&gt;= 10)&#123;</div><div class="line">                output-&gt;val = l2-&gt;val + output-&gt;val - 10 + sign; </div><div class="line">                sign = 1;</div><div class="line">            &#125;else&#123;</div><div class="line">                output-&gt;val = l2-&gt;val + output-&gt;val + sign;</div><div class="line">                sign = 0;</div><div class="line">            &#125;</div><div class="line">            ListNode* temp = new ListNode(0);</div><div class="line">            output-&gt;next = temp;</div><div class="line">            end = output;</div><div class="line">            output = output-&gt;next;</div><div class="line">            l2 = l2-&gt;next;</div><div class="line">        &#125;</div><div class="line">        if(sign == 1 &amp;&amp;! l1 &amp;&amp;! l2)&#123;</div><div class="line">            output-&gt;val = 1;</div><div class="line">            ListNode* temp = new ListNode(0);</div><div class="line">            output-&gt;next = temp;</div><div class="line">            end = output;</div><div class="line">            output = output-&gt;next;</div><div class="line">        &#125;</div><div class="line">        end-&gt;next = NULL;</div><div class="line">        return head;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</div><div class="line">        ListNode* ret = new ListNode(0);</div><div class="line">        ListNode* head = ret;</div><div class="line">        helper(l1, l2, ret, 0);</div><div class="line">        return head;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    void helper(ListNode* l1, ListNode* l2, ListNode* ret, int carry) &#123;        </div><div class="line">        int sum = carry;</div><div class="line">        if (l1 != NULL) &#123;</div><div class="line">            sum += l1 -&gt; val;</div><div class="line">            l1 = l1 -&gt; next;</div><div class="line">        &#125;</div><div class="line">        if (l2 != NULL) &#123;</div><div class="line">            sum += l2 -&gt; val;</div><div class="line">            l2 = l2 -&gt; next;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        ret -&gt; val = sum % 10;</div><div class="line">        carry = sum / 10;</div><div class="line">        if (l1 == NULL &amp;&amp; l2 == NULL &amp;&amp; carry == 0) return;</div><div class="line">        else &#123;</div><div class="line">            ret -&gt; next = new ListNode(0);</div><div class="line">            helper(l1, l2, ret -&gt; next, carry);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Leetcode/" class="article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/05/Leetcode-2-Add Two Numbers/">展开全文 >></a>
         </p>
       
 
@@ -620,19 +702,19 @@
 
 
   
-    <article id="post-Leetcode-7-Reverse Integer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Leetcode-8-String to Integer (atoi)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/05/Leetcode-7-Reverse Integer/">Leetcode-7:Reverse Integer</a>
+      <a class="article-title" href="/2017/07/05/Leetcode-8-String to Integer (atoi)/">Leetcode-8:String to Integer (atoi)</a>
     </h1>
   
 
         
-        <a href="/2017/07/05/Leetcode-7-Reverse Integer/" class="archive-article-date">
+        <a href="/2017/07/05/Leetcode-8-String to Integer (atoi)/" class="archive-article-date">
   	<time datetime="2017-07-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
 </a>
         
@@ -640,12 +722,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Reverse digits of an integer.</p>
-<p><strong>Have you thought about this?</strong><br><br>Here are some good questions to ask before coding. Bonus points for you if you have already thought through this!<br><br>If the integer’s last digit is 0, what should the output be? ie, cases such as 10, 100.<br><br>Did you notice that the reversed integer might overflow? Assume the input is a 32-bit integer, then the reverse of 1000000003 overflows. How should you handle such cases?<br><br>For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.</p>
-<p><strong>Note:</strong><br>The input is assumed to be a 32-bit signed integer. Your function should return 0 when the reversed integer overflows.</p>
-<h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Example1: x = 123, return 321</div><div class="line">Example2: x = -123, return -321</div></pre></td></tr></table></figure>
-<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int reverse(int x) &#123;</div><div class="line">        int y = 0;</div><div class="line">        int temp;</div><div class="line">        int oldy = 0;</div><div class="line">        </div><div class="line">        while(x != 0)&#123;</div><div class="line">            temp = x -(x/10)*10;</div><div class="line">            oldy = y;</div><div class="line">            y = y*10 + temp;</div><div class="line">            x = x/10;</div><div class="line">            if((y-temp)/10 != oldy)&#123;</div><div class="line">                return 0;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        // if(y&gt;intmax||y&lt;intmin)&#123;</div><div class="line">        //     y = 0;</div><div class="line">        // &#125;</div><div class="line">        </div><div class="line">        return y;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int reverse(int x) &#123;</div><div class="line">        int sign = (x&lt;0)?-1:1;</div><div class="line">        long int num = x * sign;</div><div class="line">        int j = 0;</div><div class="line">        long int result = 0;</div><div class="line">        while (num) &#123;</div><div class="line">            result = result*10 + (num%10);</div><div class="line">            num /= 10;</div><div class="line">        &#125;</div><div class="line">        result *= sign;</div><div class="line">        if ( result &gt; INT_MAX || result &lt; INT_MIN) result = 0;</div><div class="line"></div><div class="line">        return result;</div><div class="line">        </div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Implement atoi to convert a string to an integer.</p>
+<p><strong>Hint:</strong> Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself what are the possible input cases.</p>
+<p><strong>Notes:</strong> It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible to gather all the input requirements up front.</p>
+<p><strong>Requirements for atoi:</strong><br><br>The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.<br><br>The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.<br><br>If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.<br>If no valid conversion could be performed, a zero value is returned. If the correct value is out of the range of representable values, INT_MAX (2147483647) or INT_MIN (-2147483648) is returned.</p>
+<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int myAtoi(string str) &#123;</div><div class="line">    int output = 0;</div><div class="line">    int oldoutput = 0;  //用于判断是否越界</div><div class="line">    int sign = 1;</div><div class="line">    bool issign = true; //是否没有添加符号</div><div class="line">    bool saved = true;  //是否没有存过数字</div><div class="line">    </div><div class="line">    int j = 0;</div><div class="line">    </div><div class="line">    while(j&lt;str.length())&#123;</div><div class="line">        if(47&lt;str[j]&amp;&amp;str[j]&lt;58)&#123;   //ASCII比较数字</div><div class="line">            int temp = str[j] - 48;</div><div class="line">            if(saved)&#123;</div><div class="line">                saved = false;</div><div class="line">            &#125;</div><div class="line">            j++;</div><div class="line">            oldoutput = output;</div><div class="line">            output = output*10+temp;</div><div class="line">            </div><div class="line">            </div><div class="line">            if(oldoutput*sign &gt; 214748364||(oldoutput*sign == 214748364 &amp;&amp; temp&gt;7))&#123;</div><div class="line">                return 2147483647;</div><div class="line">            &#125;else if(oldoutput*sign &lt; -214748364||(oldoutput*sign == -214748364 &amp;&amp; temp&gt;8))&#123;</div><div class="line">                return -2147483648;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;else if(str[j] == &apos;.&apos;)&#123;</div><div class="line">            return output*sign;</div><div class="line">        &#125;else if(str[j] == &apos; &apos;&amp;&amp;saved)&#123;    //判断字符读取结束</div><div class="line">            j++;</div><div class="line">        &#125;else if(str[j]==&apos;-&apos;&amp;&amp;issign)&#123;    //判断字符读取结束，并带符号</div><div class="line">            sign = -1;</div><div class="line">            if(saved)&#123;</div><div class="line">                saved = false;</div><div class="line">            &#125;</div><div class="line">            issign = false;</div><div class="line">            j++;</div><div class="line">        &#125;else if(str[j]==&apos;+&apos;&amp;&amp;issign)&#123;    //判断字符读取结束，并带符号</div><div class="line">            sign = 1;</div><div class="line">            if(saved)&#123;</div><div class="line">                saved = false;</div><div class="line">            &#125;</div><div class="line">            issign = false;</div><div class="line">            j++;</div><div class="line">        &#125;else&#123;</div><div class="line">            return output*sign;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return output*sign;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int myAtoi(string str) &#123;</div><div class="line">        </div><div class="line">        long result = 0;</div><div class="line">        int indicator = 1;</div><div class="line">        </div><div class="line">        int i = 0;</div><div class="line">        </div><div class="line">        while (str[i] == &apos; &apos;) &#123; i++; &#125;</div><div class="line">            </div><div class="line">        if(str[i] == &apos;-&apos; || str[i] == &apos;+&apos;)&#123;</div><div class="line"></div><div class="line">            indicator = (str[i] == &apos;-&apos;)? -1 : 1;</div><div class="line">            cout &lt;&lt; str[i]&lt;&lt;endl;</div><div class="line">            i++;</div><div class="line">        &#125;</div><div class="line">        while(str[i] &gt;= &apos;0&apos; &amp;&amp; str[i] &lt;= &apos;9&apos;)&#123;</div><div class="line"></div><div class="line">            result = result*10 + (str[i++]-&apos;0&apos;);</div><div class="line">            //i ++;</div><div class="line"></div><div class="line">            if(result*indicator &gt;= INT_MAX) return INT_MAX;</div><div class="line">            if(result*indicator &lt;= INT_MIN) return INT_MIN;  </div><div class="line">        &#125;</div><div class="line"></div><div class="line">        return result*indicator;</div><div class="line">        </div><div class="line">       </div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
       
 
       
@@ -679,7 +761,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/05/Leetcode-7-Reverse Integer/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/07/05/Leetcode-8-String to Integer (atoi)/">展开全文 >></a>
         </p>
       
 
@@ -811,11 +893,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -859,87 +941,10 @@
 
 
   
-    <article id="post-数据结构-线性表的顺序存储" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/25/数据结构-线性表的顺序存储/">数据结构-线性表的顺序存储</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/25/数据结构-线性表的顺序存储/" class="archive-article-date">
-  	<time datetime="2017-06-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="线性表的顺序存储-顺序表"><a href="#线性表的顺序存储-顺序表" class="headerlink" title="线性表的顺序存储-顺序表"></a>线性表的顺序存储-顺序表</h1><h2 id="线性表-数据结构"><a href="#线性表-数据结构" class="headerlink" title="线性表-数据结构"></a>线性表-数据结构</h2><h3 id="线性表-静态分配"><a href="#线性表-静态分配" class="headerlink" title="线性表-静态分配"></a>线性表-静态分配</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#define MaxSize 50	//顺序表的最大长度</div><div class="line">typedef struct&#123;</div><div class="line">	ElemType data[MaxSize];	//顺序表的元素</div><div class="line">	int length;	//顺序表当前长度</div><div class="line">&#125;SqList;	//顺序表的类型定义</div></pre></td></tr></table></figure>
-<h3 id="线性表-动态分配"><a href="#线性表-动态分配" class="headerlink" title="线性表-动态分配"></a>线性表-动态分配</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#define InitSize 100	//顺序表的初试定义</div><div class="line">typedef struct&#123;</div><div class="line">	ElemType *data;	//指示动态分配数组的指针</div><div class="line">	int MaxSize,length;	//数组的最大容量和当前个数</div><div class="line">&#125;SeqList;	//动态分配数组顺序表的类型定义</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/06/25/数据结构-线性表的顺序存储/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线性表</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构/" class="article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/25/数据结构-线性表的顺序存储/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -1036,11 +1041,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
