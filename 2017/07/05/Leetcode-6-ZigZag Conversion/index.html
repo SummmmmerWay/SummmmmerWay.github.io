@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/05/Leetcode-6-ZigZag Conversion/index.html">
 <meta property="og:site_name" content="哈士奇的狗窝">
 <meta property="og:description" content="问题描述：Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the s">
-<meta property="og:updated_time" content="2017-07-05T12:58:04.000Z">
+<meta property="og:updated_time" content="2017-07-06T06:59:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode-6:ZigZag Conversion">
 <meta name="twitter:description" content="问题描述：Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the s">
@@ -185,7 +185,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.<br><a id="more"></a></p>
 <h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Given nums = [2, 7, 11, 15], target = 9,</div><div class="line"></div><div class="line">Because nums[0] + nums[1] = 2 + 7 = 9,&lt;/br&gt;</div><div class="line">return [0, 1].</div></pre></td></tr></table></figure>
 <h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    string convert(string s, int numRows) &#123;</div><div class="line">        string output=&quot;&quot;;</div><div class="line">        string *rows= new string[numRows];</div><div class="line">        int i = 0;</div><div class="line">        int nCount = 2 * (numRows - 1);</div><div class="line">        if(numRows&lt;2)&#123;</div><div class="line">            while(i&lt;s.length())&#123;</div><div class="line">                for(int r=0;r&lt;numRows;r++)&#123;</div><div class="line">                rows[r].push_back(s[i]); </div><div class="line">                i++;</div><div class="line">            &#125;</div><div class="line">            &#125;    </div><div class="line">        &#125;else&#123;</div><div class="line">            </div><div class="line">            while(i&lt;s.length())&#123;</div><div class="line">                rows[numRows - 1 - abs((i%nCount)-numRows+1)].push_back(s[i]);</div><div class="line">                i++;</div><div class="line">            //下面的写法，想要创建n个数组，模拟插入n行文字，最后依次输出</div><div class="line">            // for(int i1=0;i1&lt;numRows;i1++)&#123;</div><div class="line">            //     rows[i1].push_back(s[i]);</div><div class="line">                // i++;</div><div class="line">            // &#125;</div><div class="line">            // for(int i2=numRows-2;i2&gt;0;i2--)&#123;</div><div class="line">            //     rows[i2].push_back(s[i]);</div><div class="line">            //     i++;</div><div class="line">            // &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int j =0;j&lt;numRows;j++)&#123;</div><div class="line">            output.append(rows[j]);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return output;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    string convert(string s, int numRows) &#123;</div><div class="line">        if(s.empty() || numRows &lt;= 1)</div><div class="line">        &#123;</div><div class="line">            return s;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        vector&lt;string&gt; levels(numRows);</div><div class="line">        </div><div class="line">        int level = 0;</div><div class="line">        int increment = -1;</div><div class="line">        for(int i = 0; i &lt; s.size(); ++i)</div><div class="line">        &#123;</div><div class="line">            levels[level] += s.at(i);</div><div class="line">            </div><div class="line">            if(level == 0 || level == numRows-1)</div><div class="line">            &#123;</div><div class="line">                increment = -increment;</div><div class="line">            &#125;</div><div class="line">            level += increment;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        string result;</div><div class="line">        for(int i=0; i &lt; levels.size(); ++i)</div><div class="line">        &#123;</div><div class="line">            result += levels[i];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
@@ -286,18 +286,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/07/05/Leetcode-2-Add Two Numbers/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Leetcode-2:Add Two Numbers
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/05/Leetcode-8-String to Integer (atoi)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode-8:String to Integer (atoi)</div>
+    <a href="/2017/07/05/Leetcode-2-Add Two Numbers/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode-2:Add Two Numbers</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -418,15 +409,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">溢出判断</a>
               </li>
              
               <li class="article-tag-list-item">
