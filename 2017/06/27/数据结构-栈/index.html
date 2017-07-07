@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>数据结构-栈 | 哈士奇的狗窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="单向栈栈的存储栈的顺序存储-数据结构12345#define MaxSize 50	//定义栈中元素的最大个数typedef struct&amp;#123;	ElemType data[MaxSize];	//存放栈中元素	int top;	//栈顶指针&amp;#125;SqStack;	// 栈的链式存储-数据结构12345678typedef struct LinkStackNode&amp;#123;    E">
-<meta name="keywords" content="链表,数组,C,栈">
+  <meta name="description" content="单向栈栈的存储栈的顺序存储-数据结构12345#define MaxSize 50	//定义栈中元素的最大个数typedef struct&amp;#123;    ElemType data[MaxSize]; //存放栈中元素    int top,size;    //栈顶指针与最大数量，数组下标&amp;#125;SqStack; 栈的链式存储-数据结构12345678typedef struct Lin">
+<meta name="keywords" content="数组,链表,C,栈">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构-栈">
 <meta property="og:url" content="http://yoursite.com/2017/06/27/数据结构-栈/index.html">
 <meta property="og:site_name" content="哈士奇的狗窝">
-<meta property="og:description" content="单向栈栈的存储栈的顺序存储-数据结构12345#define MaxSize 50	//定义栈中元素的最大个数typedef struct&amp;#123;	ElemType data[MaxSize];	//存放栈中元素	int top;	//栈顶指针&amp;#125;SqStack;	// 栈的链式存储-数据结构12345678typedef struct LinkStackNode&amp;#123;    E">
-<meta property="og:updated_time" content="2017-07-06T10:14:13.000Z">
+<meta property="og:description" content="单向栈栈的存储栈的顺序存储-数据结构12345#define MaxSize 50	//定义栈中元素的最大个数typedef struct&amp;#123;    ElemType data[MaxSize]; //存放栈中元素    int top,size;    //栈顶指针与最大数量，数组下标&amp;#125;SqStack; 栈的链式存储-数据结构12345678typedef struct Lin">
+<meta property="og:updated_time" content="2017-07-07T11:07:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-栈">
-<meta name="twitter:description" content="单向栈栈的存储栈的顺序存储-数据结构12345#define MaxSize 50	//定义栈中元素的最大个数typedef struct&amp;#123;	ElemType data[MaxSize];	//存放栈中元素	int top;	//栈顶指针&amp;#125;SqStack;	// 栈的链式存储-数据结构12345678typedef struct LinkStackNode&amp;#123;    E">
+<meta name="twitter:description" content="单向栈栈的存储栈的顺序存储-数据结构12345#define MaxSize 50	//定义栈中元素的最大个数typedef struct&amp;#123;    ElemType data[MaxSize]; //存放栈中元素    int top,size;    //栈顶指针与最大数量，数组下标&amp;#125;SqStack; 栈的链式存储-数据结构12345678typedef struct Lin">
   
     <link rel="alternative" href="/atom.xml" title="哈士奇的狗窝" type="application/atom+xml">
   
@@ -184,7 +184,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="单向栈"><a href="#单向栈" class="headerlink" title="单向栈"></a>单向栈</h1><h2 id="栈的存储"><a href="#栈的存储" class="headerlink" title="栈的存储"></a>栈的存储</h2><h3 id="栈的顺序存储-数据结构"><a href="#栈的顺序存储-数据结构" class="headerlink" title="栈的顺序存储-数据结构"></a>栈的顺序存储-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#define MaxSize 50	//定义栈中元素的最大个数</div><div class="line">typedef struct&#123;</div><div class="line">	ElemType data[MaxSize];	//存放栈中元素</div><div class="line">	int top;	//栈顶指针</div><div class="line">&#125;SqStack;	//</div></pre></td></tr></table></figure>
+        <h1 id="单向栈"><a href="#单向栈" class="headerlink" title="单向栈"></a>单向栈</h1><h2 id="栈的存储"><a href="#栈的存储" class="headerlink" title="栈的存储"></a>栈的存储</h2><h3 id="栈的顺序存储-数据结构"><a href="#栈的顺序存储-数据结构" class="headerlink" title="栈的顺序存储-数据结构"></a>栈的顺序存储-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#define MaxSize 50	//定义栈中元素的最大个数</div><div class="line">typedef struct&#123;</div><div class="line">    ElemType data[MaxSize]; //存放栈中元素</div><div class="line">    int top,size;    //栈顶指针与最大数量，数组下标</div><div class="line">&#125;SqStack;</div></pre></td></tr></table></figure>
 <h3 id="栈的链式存储-数据结构"><a href="#栈的链式存储-数据结构" class="headerlink" title="栈的链式存储-数据结构"></a>栈的链式存储-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">typedef struct LinkStackNode&#123;</div><div class="line">    Elemtype data;</div><div class="line">    struct LinkStackNode *ptr;</div><div class="line">&#125;LiStackNode,*LinStackNode;</div><div class="line">typedef struct LinkStack&#123;</div><div class="line">    LiStackNode *top;   //只能取得top,即逆向插入链表，top时刻为链表头，先插入的在链表尾部,top也是链表头</div><div class="line">    int count;</div><div class="line">&#125;LiStack;</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="栈的初始化"><a href="#栈的初始化" class="headerlink" title="栈的初始化"></a>栈的初始化</h2><h3 id="栈-顺序存储-初始化"><a href="#栈-顺序存储-初始化" class="headerlink" title="栈-顺序存储-初始化"></a>栈-顺序存储-初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//初始化栈</div><div class="line">SqStack *InitStack()&#123;</div><div class="line">    SqStack *stack = (SqStack *)malloc(sizeof(SqStack));</div><div class="line">    stack-&gt;top = -1;    //初始化栈顶指针</div><div class="line">    stack-&gt;size = MaxSize;</div><div class="line">    return stack;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -215,11 +215,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -440,7 +440,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回文判断</a>
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hard</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,11 +460,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">溢出判断</a>
+                <a href="javascript:void(0)" class="js-tag color5">回文判断</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -460,7 +468,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线性表</a>
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -468,11 +476,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">队列</a>
+                <a href="javascript:void(0)" class="js-tag color5">溢出判断</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color4">线性表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">队列</a>
               </li>
             
             <div class="clearfix"></div>

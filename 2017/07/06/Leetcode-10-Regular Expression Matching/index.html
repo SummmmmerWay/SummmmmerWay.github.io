@@ -9,13 +9,13 @@
   <title>Leetcode-10:Regular Expression Matching | 哈士奇的狗窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="问题描述：Implement regular expression matching with support for ‘.’ and ‘*’.">
-<meta name="keywords" content="C++,回文判断">
+<meta name="keywords" content="C++,动态规划,递归,Hard">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode-10:Regular Expression Matching">
 <meta property="og:url" content="http://yoursite.com/2017/07/06/Leetcode-10-Regular Expression Matching/index.html">
 <meta property="og:site_name" content="哈士奇的狗窝">
 <meta property="og:description" content="问题描述：Implement regular expression matching with support for ‘.’ and ‘*’.">
-<meta property="og:updated_time" content="2017-07-06T11:14:43.000Z">
+<meta property="og:updated_time" content="2017-07-06T15:14:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode-10:Regular Expression Matching">
 <meta name="twitter:description" content="问题描述：Implement regular expression matching with support for ‘.’ and ‘*’.">
@@ -187,8 +187,8 @@
         <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Implement regular expression matching with support for <strong>‘.’</strong> and <strong>‘*’</strong>.</p>
 <a id="more"></a>
 <h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&apos;.&apos; Matches any single character.</div><div class="line">&apos;*&apos; Matches zero or more of the preceding element.</div><div class="line"></div><div class="line">The matching should cover the entire input string (not partial).</div><div class="line"></div><div class="line">The function prototype should be:</div><div class="line">bool isMatch(const char *s, const char *p)</div><div class="line"></div><div class="line">Some examples:</div><div class="line">isMatch(&quot;aa&quot;,&quot;a&quot;) → false</div><div class="line">isMatch(&quot;aa&quot;,&quot;aa&quot;) → true</div><div class="line">isMatch(&quot;aaa&quot;,&quot;aa&quot;) → false</div><div class="line">isMatch(&quot;aa&quot;, &quot;a*&quot;) → true</div><div class="line">isMatch(&quot;aa&quot;, &quot;.*&quot;) → true</div><div class="line">isMatch(&quot;ab&quot;, &quot;.*&quot;) → true</div><div class="line">isMatch(&quot;aab&quot;, &quot;c*a*b&quot;) → true</div></pre></td></tr></table></figure>
-<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">bool isMatch(string s, string p) &#123;</div><div class="line">    if (p.empty())&#123;</div><div class="line">        return s.empty();</div><div class="line">    &#125;</div><div class="line">    //isMatch(s,p.substr(2))--匹配【bc】,【a*bc】</div><div class="line">    //(s[0] == p[0] || &apos;.&apos; == p[0])--匹配【abc】,【a*bc】与【abc】,【.*bc】</div><div class="line">    //isMatch(s.substr(1), p)--匹配【aaabc】,【a*bc】变成【aabc】,【a*bc】,直到变成【bc】，【a*bc】回到顶层</div><div class="line">    //否则，比较s[0]与p[0]，剩余部分进入递归</div><div class="line">    if(p[1]==&apos;*&apos;)&#123;</div><div class="line">        return (isMatch(s,p.substr(2))||(!s.empty() &amp;&amp; (s[0] == p[0] || &apos;.&apos; == p[0]) &amp;&amp; isMatch(s.substr(1), p)));</div><div class="line">    &#125;else&#123;</div><div class="line">        return (!s.empty() &amp;&amp; (s[0] == p[0] || &apos;.&apos; == p[0]) &amp;&amp; isMatch(s.substr(1), p.substr(1)));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    bool isMatch(string s, string p) &#123;</div><div class="line">        int m = s.size();</div><div class="line">        int n = p.size();</div><div class="line">        vector&lt;vector&lt;bool&gt;&gt; dp(m+1, vector&lt;bool&gt;(n+1,false));</div><div class="line">        dp[0][0] = true;</div><div class="line">        </div><div class="line">        for(int i=0; i&lt;=m; i++) &#123;</div><div class="line">            for(int j=1; j&lt;=n; j++) &#123;</div><div class="line">                if(p[j-1]!=&apos;.&apos; &amp;&amp; p[j-1]!=&apos;*&apos;) &#123;</div><div class="line">                    if(i&gt;0 &amp;&amp; s[i-1]==p[j-1] &amp;&amp; dp[i-1][j-1])</div><div class="line">                        dp[i][j] = true;</div><div class="line">                &#125;</div><div class="line">                else if(p[j-1]==&apos;.&apos;) &#123;</div><div class="line">                    if(i&gt;0 &amp;&amp; dp[i-1][j-1])</div><div class="line">                        dp[i][j] = true;</div><div class="line">                &#125;</div><div class="line">                else if(j&gt;1) &#123;  </div><div class="line">                    if(dp[i][j-1] || dp[i][j-2])  </div><div class="line">                        dp[i][j] = true;</div><div class="line">                    else if(i&gt;0 &amp;&amp; (p[j-2]==s[i-1] || p[j-2]==&apos;.&apos;) &amp;&amp; dp[i-1][j]) </div><div class="line">                        dp[i][j] = true;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return dp[m][n];</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
       
 
       
@@ -205,7 +205,15 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">回文判断</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">递归</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hard</a>
         		</li>
       		
 		</ul>
@@ -409,7 +417,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回文判断</a>
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hard</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -417,11 +437,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">溢出判断</a>
+                <a href="javascript:void(0)" class="js-tag color5">回文判断</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -429,7 +445,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线性表</a>
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -437,11 +453,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">队列</a>
+                <a href="javascript:void(0)" class="js-tag color5">溢出判断</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color4">线性表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">队列</a>
               </li>
             
             <div class="clearfix"></div>
