@@ -577,11 +577,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -1011,33 +1011,32 @@
 
 
   
-    <article id="post-数据结构-图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-算法-查找" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/27/数据结构-图/">数据结构-图</a>
+      <a class="article-title" href="/2017/06/28/算法-查找/">算法-查找</a>
     </h1>
   
 
         
-        <a href="/2017/06/27/数据结构-图/" class="archive-article-date">
-  	<time datetime="2017-06-26T22:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-27</time>
+        <a href="/2017/06/28/算法-查找/" class="archive-article-date">
+  	<time datetime="2017-06-27T20:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="图的存储"><a href="#图的存储" class="headerlink" title="图的存储"></a>图的存储</h2><h3 id="图的顺序存储-邻接矩阵法-数据结构"><a href="#图的顺序存储-邻接矩阵法-数据结构" class="headerlink" title="图的顺序存储-邻接矩阵法-数据结构"></a>图的顺序存储-邻接矩阵法-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//顺序存储，将所有的点根据矩阵按序存入</div><div class="line">#define MaxVertexNum 100 //定义顶点数量的最大值</div><div class="line">typedef char VertexType;    //定义顶点的数据类型</div><div class="line">typedef int EdgeType;   //带权图边上的权值的数据类型</div><div class="line">typedef struct&#123;</div><div class="line">    VertexType Vex[MaxVertexNum];   //顶点表</div><div class="line">    //A[i][j]表示边，为0则没有联通，为1则联通，其他数则为其权值</div><div class="line">    EdgeType Edge[MaxVertexNum][MaxVertexNum];    //边表</div><div class="line">    int vexnum,arcnum;  //记录图的当前顶点数与弧数</div><div class="line">&#125;MGragh;</div></pre></td></tr></table></figure>
-<h3 id="图的链式存储-邻接表法-数据结构"><a href="#图的链式存储-邻接表法-数据结构" class="headerlink" title="图的链式存储-邻接表法-数据结构"></a>图的链式存储-邻接表法-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//邻接表法类似树的孩子兄弟表示法，有顶点表，和一串与该顶点相连的链表</div><div class="line">#define MaxVertexNum 100 //定义顶点数量的最大值</div><div class="line">typedef char VertexType;    //定义顶点的数据类型</div><div class="line">typedef int EdgeType;   //带权图边上的权值的数据类型</div><div class="line">typedef struct ArcNode&#123; //边表结点</div><div class="line">    int adjvex; //该弧指向的顶点位置</div><div class="line">    struct ArcNode *next;   //指向下一条弧的指针</div><div class="line">&#125;ArcNode;</div><div class="line">typedef struct VNode&#123;   //邻接表</div><div class="line">    VertexType data;    //顶点信息</div><div class="line">    ArcNode *first; //指向第一条依附于该顶点的边的指针</div><div class="line">&#125;VNode,AdjList[MaxVertexNum];   //顶点表与顶点结点</div><div class="line">typedef struct&#123;</div><div class="line">    AdjList vertices;   //邻接表，顶点表</div><div class="line">    int vexnum,arcnum;  //记录图的当前顶点数与弧数</div><div class="line">&#125;ALGraph;   //ALGraph是以邻接表存储的图类型</div></pre></td></tr></table></figure>
-<h3 id="图的链式存储-十字链表法-数据结构"><a href="#图的链式存储-十字链表法-数据结构" class="headerlink" title="图的链式存储-十字链表法-数据结构"></a>图的链式存储-十字链表法-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">//用于表示有向图，十字链表法是邻接矩阵法的拓展，相当于增加了边的前后驱，能更快的遍历相同入度或相同出度的边</div><div class="line">#define MaxVertexNum 100 //定义顶点数量的最大值</div><div class="line">typedef char VertexType;    //定义顶点的数据类型</div><div class="line">typedef int EdgeType;   //带权图边上的权值的数据类型</div><div class="line">typedef string InfoType;    //边信息的数据类型</div><div class="line">typedef struct ArcNode&#123; //边表结点</div><div class="line">    int tailvex,headvex;    //该弧的头尾结点</div><div class="line">    ArcNode *hlink,*tlink;  //分别指向弧头相同和弧尾相同的结点</div><div class="line">    InfoType info;  //边相关信息</div><div class="line">&#125;ArcNode;</div><div class="line">typedef struct VNode&#123;   //顶点表结点</div><div class="line">    VertexType data;    //顶点信息</div><div class="line">    ArcNode *firstin,*firstout; //指向第一条入弧和出弧</div><div class="line">&#125;VNode,GLlist[MaxVertexNum];</div><div class="line">typedef struct&#123;</div><div class="line">    //VNode GLlist[MaxVertexNum];  //邻接表</div><div class="line">    GLlist GLlist;  //邻接表</div><div class="line">    int vexnum,arcnum;  //图的顶点数和弧数</div><div class="line">&#125;GLGraph;   //GLGraph是以邻接表存储的图类型</div></pre></td></tr></table></figure>
-<h3 id="图的链式存储-邻接多重表法-数据结构"><a href="#图的链式存储-邻接多重表法-数据结构" class="headerlink" title="图的链式存储-邻接多重表法-数据结构"></a>图的链式存储-邻接多重表法-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">//用于表示无向图，与有向图的十字链表法类似</div><div class="line">#define MaxVertexNum 100 //定义顶点数量的最大值</div><div class="line">typedef char VertexType;    //定义顶点的数据类型</div><div class="line">typedef int EdgeType;   //带权图边上的权值的数据类型</div><div class="line">typedef string InfoType;    //边信息的数据类型</div><div class="line">typedef struct ArcNode&#123; //边表结点</div><div class="line">    bool mark;  //访问标记</div><div class="line">    int ivex,jvex;  //分别指向该弧的两个结点</div><div class="line">    ArcNode *ilink,*jlink;  //分别指向两个顶点的下一条边</div><div class="line">    InfoType info;  //相关边的信息</div><div class="line">&#125;ArcNode;</div><div class="line">typedef struct VNode&#123;   //顶点表结点</div><div class="line">    VertexType data;    //顶点信息</div><div class="line">    ArcNode *firstedge; //指向第一条依附该顶点的边</div><div class="line">&#125;VNode,Adjmulist[MaxVertexNum];</div><div class="line">typedef struct&#123;</div><div class="line">    Adjmulist adjmulist;    //邻接表</div><div class="line">    int vexnum,arcnum;  //图的顶点数和弧数</div><div class="line">&#125;AMLGraph;</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/06/27/数据结构-图/#more">more >></a>
-        
+        <h1 id="线性表的查找"><a href="#线性表的查找" class="headerlink" title="线性表的查找"></a>线性表的查找</h1><h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><h3 id="线性表的顺序查找"><a href="#线性表的顺序查找" class="headerlink" title="线性表的顺序查找"></a>线性表的顺序查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//不考虑链式，其实本质相同，默认元素不重复</div><div class="line">typedef int ElemType;</div><div class="line">typedef struct&#123; //查找表的数据结构</div><div class="line">    ElemType *elem; //元素存储空间基址，建表时实际长度分配，0号单元留空</div><div class="line">    int TableLen;   //表的长度</div><div class="line">&#125;SSTable;</div><div class="line">//ST.elem[0]为哨兵元素，存储待找元素</div><div class="line">int Search_Seq(SSTable ST,ElemType key)&#123;</div><div class="line">    ST.elem[0] = key;</div><div class="line">    int index;</div><div class="line">    for(index=ST.TableLen;ST.elem[index]!=key;--index)&#123;&#125;</div><div class="line">    return index;   //返回数组下标</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="有序表的顺序查找"><a href="#有序表的顺序查找" class="headerlink" title="有序表的顺序查找"></a>有序表的顺序查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//不考虑链式，其实本质相同，默认元素不重复</div><div class="line">typedef int ElemType;</div><div class="line">typedef struct&#123; //查找表的数据结构</div><div class="line">    ElemType *elem; //元素存储空间基址，建表时实际长度分配</div><div class="line">    int TableLen;   //表的长度</div><div class="line">&#125;SSTable;</div><div class="line">int Search_SeqOrderly(SSTable ST,ElemType key)&#123;</div><div class="line">    ST.elem[0] = key;</div><div class="line">    int index;</div><div class="line">    for(index=ST.TableLen-1;ST.elem[index]!=key;--index)&#123;</div><div class="line">        if(ST.elem[index]&lt;key)&#123;</div><div class="line">            return -1;//从后往前，找到比key小还没找到，说明没有</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return index;   //返回数组下标，-1则没有</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h2><h3 id="有序表的折半查找"><a href="#有序表的折半查找" class="headerlink" title="有序表的折半查找"></a>有序表的折半查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//只有有序表才能够进行折半查找，不考虑元素重复</div><div class="line">typedef int ElemType;</div><div class="line">typedef struct&#123; //查找表的数据结构</div><div class="line">    ElemType *elem; //元素存储空间基址，建表时实际长度分配</div><div class="line">    int TableLen;   //表的长度</div><div class="line">&#125;SSTable;</div><div class="line">int Binary_Search(SSTable ST,ElemType key)&#123;</div><div class="line">    int low = 0;</div><div class="line">    int high = ST.TableLen-1;</div><div class="line">    int mid;</div><div class="line">    while(low&lt;=high)&#123;</div><div class="line">        mid = (low+high)/2;</div><div class="line">        if(ST.elem[mid] == key)&#123;</div><div class="line">            return mid;</div><div class="line">        &#125;else if(ST.elem[mid] &gt; key)&#123;</div><div class="line">            high = mid - 1;</div><div class="line">        &#125;else&#123;</div><div class="line">            low = mid + 1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return -1;  //上面没有return，则找不到</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h2><h3 id="局部有序表的折半查找"><a href="#局部有序表的折半查找" class="headerlink" title="局部有序表的折半查找"></a>局部有序表的折半查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//局部有序，说明索引块之间的最大值是有序的，索引块内部可以无序</div><div class="line">typedef struct&#123; //查找表的索引</div><div class="line">    ElemType max; //该索引块中的最大值</div><div class="line">    int index;  //索引块的第一个下标</div><div class="line">    int IndexLen;   //索引块的长度</div><div class="line">&#125;SSTableIndex;</div><div class="line">typedef struct&#123; //查找表的数据结构</div><div class="line">    ElemType *elem; //元素存储空间基址，建表时实际长度分配</div><div class="line">    int TableLen;   //表的长度</div><div class="line">    SSTableIndex *Tableindex; //索引表,存储空间基址，建表时实际长度分配</div><div class="line">    int TableIndexLen;   //索引表的长度</div><div class="line">&#125;SSTable;</div><div class="line"></div><div class="line">int Block_Search(SSTable ST,ElemType key)&#123;</div><div class="line">    int indexblock = 0;</div><div class="line">    //第一步寻找key可能所在的分块</div><div class="line">    while(indexblock&lt;ST.TableIndexLen-1 &amp;&amp; ST.Tableindex[indexblock].max&lt;key)&#123;  //如果已经是最后一块了，则不用往下找</div><div class="line">        indexblock++;</div><div class="line">    &#125;</div><div class="line">    for(int i=0;i&lt;ST.Tableindex[indexblock].IndexLen;i++)&#123;</div><div class="line">        if(ST.elem[i+ST.Tableindex[indexblock].index==key])&#123;</div><div class="line">            return i+ST.Tableindex[indexblock].index;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return -1;  //上面没有返回，则没有找到，返回-1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="查找的应用"><a href="#查找的应用" class="headerlink" title="查找的应用"></a>查找的应用</h1><h2 id="字符串匹配"><a href="#字符串匹配" class="headerlink" title="字符串匹配"></a>字符串匹配</h2><h3 id="简单的模式匹配"><a href="#简单的模式匹配" class="headerlink" title="简单的模式匹配"></a>简单的模式匹配</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//C语言，自行封装String</div><div class="line">typedef struct&#123;</div><div class="line">    char *elem;</div><div class="line">    int length; //String长度</div><div class="line">&#125;String;</div><div class="line">int findStringIndex(String main,String key)&#123;</div><div class="line">    int i=0,j=0;</div><div class="line">    while(i&lt;main.length&amp;&amp;j&lt;key.length)&#123;</div><div class="line">        if(main.elem[i]==key.elem[j])&#123;</div><div class="line">            i++;</div><div class="line">            j++;</div><div class="line">        &#125;else&#123;</div><div class="line">            j=0;</div><div class="line">            i=i-j+1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    if(j==key.length)&#123;</div><div class="line">        return i-j;  //说明已经找到</div><div class="line">    &#125;else&#123;</div><div class="line">        return -1;  //说明没有找到</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="改进的模式匹配——KMP算法"><a href="#改进的模式匹配——KMP算法" class="headerlink" title="改进的模式匹配——KMP算法"></a>改进的模式匹配——KMP算法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//求next数组</div><div class="line">void get_next(String key,int next[])&#123;</div><div class="line">    int i =0;</div><div class="line">    int j=-1;   //说明正在匹配第一个</div><div class="line">    next[0] = -1;</div><div class="line">    while(i&lt;key.length)&#123;</div><div class="line">        if(j==-1||key.elem[i]==key.elem[j])&#123;</div><div class="line">            i++;</div><div class="line">            j++;</div><div class="line">            next[i]=j;</div><div class="line">        &#125;else&#123;</div><div class="line">            j=next[j];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int KMP(String main,String key,int next[],int pos)&#123;</div><div class="line">    //求Key在main中第pos个字符后的位置</div><div class="line">    int i = pos-1;</div><div class="line">    int j = -1; //说明正在匹配第一个</div><div class="line">    while(i&lt;main.length&amp;&amp;j&lt;key.length)&#123;</div><div class="line">        if(j==-1||main.elem[i]==key.elem[j])&#123;</div><div class="line">            i++;</div><div class="line">            j++;</div><div class="line">        &#125;else&#123;</div><div class="line">            j=next[j];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
 
       
@@ -1050,35 +1049,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线性表</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">拓扑排序</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">最短路径</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">最小生成树</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
@@ -1099,7 +1078,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/27/数据结构-图/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/28/算法-查找/">展开全文 >></a>
         </p>
       
 
@@ -1230,11 +1209,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">递归回溯</a>
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1242,11 +1217,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+                <a href="javascript:void(0)" class="js-tag color3">双端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">双端</a>
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">递归回溯</a>
               </li>
              
               <li class="article-tag-list-item">
