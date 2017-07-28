@@ -56,7 +56,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/categories/数据结构">数据结构</a></li>
+				<li><a href="/categories/数据结构与算法">数据结构与算法</a></li>
 	        
 				<li><a href="/categories/Leetcode">Leetcode</a></li>
 	        
@@ -142,7 +142,7 @@
 				
 					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories/数据结构">数据结构</a></li>
+					<li style="width: 25%"><a href="/categories/数据结构与算法">数据结构与算法</a></li>
 		        
 					<li style="width: 25%"><a href="/categories/Leetcode">Leetcode</a></li>
 		        
@@ -162,6 +162,110 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-数据结构-二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/27/数据结构-二叉树/">数据结构-二叉树</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/27/数据结构-二叉树/" class="archive-article-date">
+  	<time datetime="2017-06-26T20:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><h2 id="二叉树的存储"><a href="#二叉树的存储" class="headerlink" title="二叉树的存储"></a>二叉树的存储</h2><h3 id="二叉树的顺序存储-数据结构"><a href="#二叉树的顺序存储-数据结构" class="headerlink" title="二叉树的顺序存储-数据结构"></a>二叉树的顺序存储-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//顺序存储，从树顶到底，从上到下，从左往右存入结点，不存在则标记</div><div class="line">//顺序存储常用于满二叉树和完全二叉树</div><div class="line">#define MaxSize 50	//定义树中元素的最大个数</div><div class="line">typedef struct&#123;    //树的结点定义</div><div class="line">    ElemType data;  //数据元素</div><div class="line">&#125;BiTNode;</div><div class="line">typedef struct&#123;</div><div class="line">	BiTNode nodes[MaxSize];	//存放栈中元素</div><div class="line">&#125;BiTree;	//</div></pre></td></tr></table></figure>
+<h3 id="二叉树的链式存储-数据结构"><a href="#二叉树的链式存储-数据结构" class="headerlink" title="二叉树的链式存储-数据结构"></a>二叉树的链式存储-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//主要使用链式存储，之后也只讨论链式的方法</div><div class="line">typedef struct BiTNode&#123;</div><div class="line">    ElemType data;  //数据域</div><div class="line">    BiTNode *lchild,*rchild;    //左右孩子指针</div><div class="line">&#125;BiTNode,*BiTree;</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/06/27/数据结构-二叉树/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构与算法/" class="article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/27/数据结构-二叉树/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-数据结构-树和森林" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -213,6 +317,10 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">树</a>
         		</li>
       		
@@ -225,7 +333,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构/" class="article-tag-list-link color5">数据结构</a>
+        			<a href="/categories/数据结构与算法/" class="article-tag-list-link color3">数据结构与算法</a>
         		</li>
       		
 		</ul>
@@ -235,6 +343,201 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/06/27/数据结构-树和森林/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-算法-查找" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/27/算法-查找/">算法-查找</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/27/算法-查找/" class="archive-article-date">
+  	<time datetime="2017-06-26T19:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="线性表的查找"><a href="#线性表的查找" class="headerlink" title="线性表的查找"></a>线性表的查找</h1><h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><h3 id="线性表的顺序查找"><a href="#线性表的顺序查找" class="headerlink" title="线性表的顺序查找"></a>线性表的顺序查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//不考虑链式，其实本质相同，默认元素不重复</div><div class="line">typedef int ElemType;</div><div class="line">typedef struct&#123; //查找表的数据结构</div><div class="line">    ElemType *elem; //元素存储空间基址，建表时实际长度分配，0号单元留空</div><div class="line">    int TableLen;   //表的长度</div><div class="line">&#125;SSTable;</div><div class="line">//ST.elem[0]为哨兵元素，存储待找元素</div><div class="line">int Search_Seq(SSTable ST,ElemType key)&#123;</div><div class="line">    ST.elem[0] = key;</div><div class="line">    int index;</div><div class="line">    for(index=ST.TableLen;ST.elem[index]!=key;--index)&#123;&#125;</div><div class="line">    return index;   //返回数组下标</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="有序表的顺序查找"><a href="#有序表的顺序查找" class="headerlink" title="有序表的顺序查找"></a>有序表的顺序查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//不考虑链式，其实本质相同，默认元素不重复</div><div class="line">typedef int ElemType;</div><div class="line">typedef struct&#123; //查找表的数据结构</div><div class="line">    ElemType *elem; //元素存储空间基址，建表时实际长度分配</div><div class="line">    int TableLen;   //表的长度</div><div class="line">&#125;SSTable;</div><div class="line">int Search_SeqOrderly(SSTable ST,ElemType key)&#123;</div><div class="line">    ST.elem[0] = key;</div><div class="line">    int index;</div><div class="line">    for(index=ST.TableLen-1;ST.elem[index]!=key;--index)&#123;</div><div class="line">        if(ST.elem[index]&lt;key)&#123;</div><div class="line">            return -1;//从后往前，找到比key小还没找到，说明没有</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return index;   //返回数组下标，-1则没有</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h2><h3 id="有序表的折半查找"><a href="#有序表的折半查找" class="headerlink" title="有序表的折半查找"></a>有序表的折半查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//只有有序表才能够进行折半查找，不考虑元素重复</div><div class="line">typedef int ElemType;</div><div class="line">typedef struct&#123; //查找表的数据结构</div><div class="line">    ElemType *elem; //元素存储空间基址，建表时实际长度分配</div><div class="line">    int TableLen;   //表的长度</div><div class="line">&#125;SSTable;</div><div class="line">int Binary_Search(SSTable ST,ElemType key)&#123;</div><div class="line">    int low = 0;</div><div class="line">    int high = ST.TableLen-1;</div><div class="line">    int mid;</div><div class="line">    while(low&lt;=high)&#123;</div><div class="line">        mid = (low+high)/2;</div><div class="line">        if(ST.elem[mid] == key)&#123;</div><div class="line">            return mid;</div><div class="line">        &#125;else if(ST.elem[mid] &gt; key)&#123;</div><div class="line">            high = mid - 1;</div><div class="line">        &#125;else&#123;</div><div class="line">            low = mid + 1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return -1;  //上面没有return，则找不到</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h2><h3 id="局部有序表的折半查找"><a href="#局部有序表的折半查找" class="headerlink" title="局部有序表的折半查找"></a>局部有序表的折半查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//局部有序，说明索引块之间的最大值是有序的，索引块内部可以无序</div><div class="line">typedef struct&#123; //查找表的索引</div><div class="line">    ElemType max; //该索引块中的最大值</div><div class="line">    int index;  //索引块的第一个下标</div><div class="line">    int IndexLen;   //索引块的长度</div><div class="line">&#125;SSTableIndex;</div><div class="line">typedef struct&#123; //查找表的数据结构</div><div class="line">    ElemType *elem; //元素存储空间基址，建表时实际长度分配</div><div class="line">    int TableLen;   //表的长度</div><div class="line">    SSTableIndex *Tableindex; //索引表,存储空间基址，建表时实际长度分配</div><div class="line">    int TableIndexLen;   //索引表的长度</div><div class="line">&#125;SSTable;</div><div class="line"></div><div class="line">int Block_Search(SSTable ST,ElemType key)&#123;</div><div class="line">    int indexblock = 0;</div><div class="line">    //第一步寻找key可能所在的分块</div><div class="line">    while(indexblock&lt;ST.TableIndexLen-1 &amp;&amp; ST.Tableindex[indexblock].max&lt;key)&#123;  //如果已经是最后一块了，则不用往下找</div><div class="line">        indexblock++;</div><div class="line">    &#125;</div><div class="line">    for(int i=0;i&lt;ST.Tableindex[indexblock].IndexLen;i++)&#123;</div><div class="line">        if(ST.elem[i+ST.Tableindex[indexblock].index==key])&#123;</div><div class="line">            return i+ST.Tableindex[indexblock].index;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return -1;  //上面没有返回，则没有找到，返回-1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="查找的应用"><a href="#查找的应用" class="headerlink" title="查找的应用"></a>查找的应用</h1><h2 id="字符串匹配"><a href="#字符串匹配" class="headerlink" title="字符串匹配"></a>字符串匹配</h2><h3 id="简单的模式匹配"><a href="#简单的模式匹配" class="headerlink" title="简单的模式匹配"></a>简单的模式匹配</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//C语言，自行封装String</div><div class="line">typedef struct&#123;</div><div class="line">    char *elem;</div><div class="line">    int length; //String长度</div><div class="line">&#125;String;</div><div class="line">int findStringIndex(String main,String key)&#123;</div><div class="line">    int i=0,j=0;</div><div class="line">    while(i&lt;main.length&amp;&amp;j&lt;key.length)&#123;</div><div class="line">        if(main.elem[i]==key.elem[j])&#123;</div><div class="line">            i++;</div><div class="line">            j++;</div><div class="line">        &#125;else&#123;</div><div class="line">            j=0;</div><div class="line">            i=i-j+1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    if(j==key.length)&#123;</div><div class="line">        return i-j;  //说明已经找到</div><div class="line">    &#125;else&#123;</div><div class="line">        return -1;  //说明没有找到</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="改进的模式匹配——KMP算法"><a href="#改进的模式匹配——KMP算法" class="headerlink" title="改进的模式匹配——KMP算法"></a>改进的模式匹配——KMP算法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//求next数组</div><div class="line">void get_next(String key,int next[])&#123;</div><div class="line">    int i =0;</div><div class="line">    int j=-1;   //说明正在匹配第一个</div><div class="line">    next[0] = -1;</div><div class="line">    while(i&lt;key.length)&#123;</div><div class="line">        if(j==-1||key.elem[i]==key.elem[j])&#123;</div><div class="line">            i++;</div><div class="line">            j++;</div><div class="line">            next[i]=j;</div><div class="line">        &#125;else&#123;</div><div class="line">            j=next[j];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int KMP(String main,String key,int next[],int pos)&#123;</div><div class="line">    //求Key在main中第pos个字符后的位置</div><div class="line">    int i = pos-1;</div><div class="line">    int j = -1; //说明正在匹配第一个</div><div class="line">    while(i&lt;main.length&amp;&amp;j&lt;key.length)&#123;</div><div class="line">        if(j==-1||main.elem[i]==key.elem[j])&#123;</div><div class="line">            i++;</div><div class="line">            j++;</div><div class="line">        &#125;else&#123;</div><div class="line">            j=next[j];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线性表</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构与算法/" class="article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/27/算法-查找/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-算法-查找的副本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/27/算法-查找的副本/">算法-排序</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/27/算法-查找的副本/" class="archive-article-date">
+  	<time datetime="2017-06-26T19:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="线性表的排序"><a href="#线性表的排序" class="headerlink" title="线性表的排序"></a>线性表的排序</h1><h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">//时间复杂度为o(n^2),count为待排序数组大小,假设从小到大排序</div><div class="line">void InsertSortDir(ElemType number[],int count)&#123;</div><div class="line">    int current;    //从第1个开始，扔到current前面进行排序</div><div class="line">    int change=0;</div><div class="line">    int changenumber;</div><div class="line">    for(current=1;current&lt;count;current++)&#123;</div><div class="line">        if(number[current]&gt;number[current-1])&#123; //如果比前面大，则这次已经在正确位置上，不必插入，跳过</div><div class="line">            while(change&lt;current&amp;&amp;number[change]&lt;number[current])&#123;</div><div class="line">                change++;   //找到待插入元素</div><div class="line">            &#125;</div><div class="line">            changenumber = number[current];</div><div class="line">            for(int j=change+1;j&lt;=current;j++)&#123;  //交换后面的位置</div><div class="line">                number[j]=number[j-1];</div><div class="line">            &#125;</div><div class="line">            number[change] = changenumber;  //插入待插入元素</div><div class="line">            change = 0;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">//时间复杂度为o(n^2),count为待排序数组大小,假设从小到大排序</div><div class="line">void InsertSortRed(ElemType number[],int count)&#123;</div><div class="line">    int current;    //从第1个开始，扔到current前面进行排序</div><div class="line">    int change=0;</div><div class="line">    int changenumber;</div><div class="line">    for(current=1;current&lt;count;current++)&#123;</div><div class="line">        if(number[current]&gt;number[current-1])&#123; //如果比前面大，则这次已经在正确位置上，不必插入，跳过</div><div class="line">            int low = 0,high = current-1;</div><div class="line">            int mid = 0;</div><div class="line">            while(low&lt;=high)&#123;//查找方式变为折半</div><div class="line">                mid = (low+high)/2;</div><div class="line">                if(number[mid]&gt;number[current])&#123;</div><div class="line">                    high = mid-1;</div><div class="line">                &#125;else&#123;</div><div class="line">                    low = mid+1;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            change = mid;   //待插入元素位置</div><div class="line">            changenumber = number[current];</div><div class="line">            for(int j=change+1;j&lt;=current;j++)&#123;  //交换后面的位置</div><div class="line">                number[j]=number[j-1];</div><div class="line">            &#125;</div><div class="line">            number[change] = changenumber;  //插入待插入元素</div><div class="line">            change = 0;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="希尔插入排序"><a href="#希尔插入排序" class="headerlink" title="希尔插入排序"></a>希尔插入排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//对于希尔排序，前后记录增量为dk,不为1,len为步长</div><div class="line">void ShellSort(ElemType number[],int count,int len)&#123;</div><div class="line">    int change = 0;</div><div class="line">    int changenumber = 0;</div><div class="line">    for(int dk=len/2;dk&gt;=1;dk=dk/2)&#123;</div><div class="line">        for(int i = dk;i&lt;2*dk;i++)&#123;</div><div class="line">            if(number[i]&lt;number[i-dk])&#123; //相等，则在正确的位置上</div><div class="line">                while(change&lt;i&amp;&amp;number[change]&lt;number[i])&#123;</div><div class="line">                    change+=dk;   //找到待插入元素</div><div class="line">                &#125;</div><div class="line">                changenumber = number[i];</div><div class="line">                for(int j=change+dk;j&lt;=i;j+=dk)&#123;  //交换后面的位置</div><div class="line">                    number[j]=number[j-dk];</div><div class="line">                &#125;</div><div class="line">                number[change] = changenumber;  //插入待插入元素</div><div class="line">                change = i-dk;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h2><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//时间复杂度为o(n^2)，举例从后往前升序冒泡</div><div class="line">void BubbleSort(ElemType number[],int count)&#123;</div><div class="line">    int i=0;</div><div class="line">    int temp=0;</div><div class="line">    bool changed=true;</div><div class="line">    while(i&lt;count&amp;&amp;changed)&#123;</div><div class="line">        changed=false;  //本趟排序默认没发生交换</div><div class="line">        for(int j=count-1;j&gt;i;j--)&#123; //从前往后则j=0;j&lt;count-i-1;j++，然后比较j与j+1</div><div class="line">            if(number[j]&lt;number[j-1])&#123;</div><div class="line">                changed = true;</div><div class="line">                temp = number[j];   //交换元素</div><div class="line">                number[j]=number[j-1];</div><div class="line">                number[j-1]=temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        i++;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//时间复杂度为o(log2(n))</div><div class="line">int Pratition(ElemType number[],int low,int high)&#123;</div><div class="line">    ElemType pivot = number[low];   //将第一个元素作为轴,这个可以任意,不同情况下取轴可不同</div><div class="line">    while(low&lt;high)&#123;</div><div class="line">        while(low&lt;high&amp;&amp;number[high]&gt;=pivot)&#123;</div><div class="line">            high--; //将比pivot小的元素放在右侧</div><div class="line">        &#125;</div><div class="line">        //跳出，说明number[high]&lt;pivot，需要把其放在左侧</div><div class="line">        number[low]=number[high];   //第一次的low被记录在pivot里，后续的low记录在前一次的high中</div><div class="line">        while(low&lt;high&amp;&amp;number[low]&lt;=pivot)&#123;</div><div class="line">            low++;</div><div class="line">        &#125;</div><div class="line">        //跳出,说明number[low]&gt;pivot,需要放在右侧</div><div class="line">        number[high]=number[low];   //上一次的high已经存入low，可以直接替换</div><div class="line">    &#125;</div><div class="line">    number[low]=pivot;  //放回其正确位置</div><div class="line">    return low;</div><div class="line">&#125;</div><div class="line">void QuickSort(ElemType number[],int low,int high)&#123;</div><div class="line">    if(low&lt;high)&#123;</div><div class="line">        int pivotpos=Pratition(number,low,high);    //划分，其中pivotpos左侧小于其值，右侧大于，pivotpos为正确的位置</div><div class="line">        QuickSort(number, low, pivotpos-1);</div><div class="line">        QuickSort(number, pivotpos+1, high);</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h3 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//时间复杂度为o(n^2),依次找出最小或最大的</div><div class="line">void SelectSort(ElemType number[],int count)&#123;</div><div class="line">    int minindex = 0;</div><div class="line">    int temp = 0;</div><div class="line">    for(int i=0;i&lt;count;i++)&#123;</div><div class="line">        minindex = i;</div><div class="line">        for(int j=i+1;j&lt;count;j++)&#123;</div><div class="line">            if(number[j]&lt;number[minindex])&#123; //找到最小的那个</div><div class="line">                minindex = j;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        temp = number[i];</div><div class="line">        number[i]=number[minindex];</div><div class="line">        number[minindex] = temp;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">//向下调堆,用于大顶堆</div><div class="line">void AdjustDown(ElemType number[],int i,int count)&#123;</div><div class="line">    int temp = number[i];</div><div class="line">    for(int j=2*i+1;j&lt;count;j=2*j+1)&#123;   //沿着交大打子节点向下筛选</div><div class="line">        if(j+1&lt;count&amp;&amp;number[j]&lt;number[j+1])&#123;   //取左右子节点交大的一个</div><div class="line">            j++;</div><div class="line">        &#125;</div><div class="line">        if(temp&gt;number[j])&#123; //父节点大于所有子节点，不需要改变</div><div class="line">            break;</div><div class="line">        &#125;else&#123;  //否则交换位置</div><div class="line">            number[i]=number[j];    //大的一个子节点，放在父节点位置，小的父节点下移</div><div class="line">            i=j;    //即现在判断的新父节点，为刚刚降下来的那个子节点位置，向下寻找新的次大值</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    number[i]=temp;  //最终位置放入开始判断的那个值</div><div class="line">&#125;</div><div class="line">//在堆栈中删除元素，即将删除的元素与堆底对换，然后向下调整一次替换元素位置</div><div class="line">//向上调堆,用于向堆栈中插入元素</div><div class="line">void AdjustUp(ElemType number[],int i,int count)&#123;</div><div class="line">    int temp = number[i];</div><div class="line">    int j = (i+1)/2;    //j为i的父亲节点</div><div class="line">    while(j&gt;=0&amp;&amp;number[j]&lt;temp)&#123;    //子节点比父节点小则上移</div><div class="line">        number[i]=number[j];    //父亲被子节点替代</div><div class="line">        i=j;</div><div class="line">        j = (i+1)/2;    //继续往上调</div><div class="line">    &#125;</div><div class="line">    number[j]=temp; //找到正确位置</div><div class="line">&#125;</div><div class="line">//建立大顶堆</div><div class="line">void BuildMaxHeap(ElemType number[],int count)&#123;</div><div class="line">    for(int i=count/2;i&gt;=0;i--)&#123; //从i=[n/2]~1反复调整堆，此为父节点数量</div><div class="line">        AdjustDown(number,i,count);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//时间复杂度为o(nlog2(n)),堆用数组记录,从number[0]开始记录,每次排序获得最大值</div><div class="line">void HeapSort(ElemType number[],int count)&#123;</div><div class="line">    BuildMaxHeap(number, count);</div><div class="line">    int temp = 0;</div><div class="line">    //每次number[0]都是当前排序最大的值，放入倒数便可</div><div class="line">    for(int i=1;i&lt;count-1;i++)&#123;</div><div class="line">        temp = number[0];</div><div class="line">        number[0] = number[count-i];</div><div class="line">        number[count-i] = temp;</div><div class="line">        //新堆只有堆顶元素混乱，其他有序，只要向下排一次便可</div><div class="line">        AdjustDown(number, 0, count-i);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线性表</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构与算法/" class="article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/27/算法-查找的副本/">展开全文 >></a>
         </p>
       
 
@@ -313,6 +616,10 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">队列</a>
         		</li>
       		
@@ -325,7 +632,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构/" class="article-tag-list-link color5">数据结构</a>
+        			<a href="/categories/数据结构与算法/" class="article-tag-list-link color3">数据结构与算法</a>
         		</li>
       		
 		</ul>
@@ -413,6 +720,10 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
         		</li>
       		
@@ -425,7 +736,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构/" class="article-tag-list-link color5">数据结构</a>
+        			<a href="/categories/数据结构与算法/" class="article-tag-list-link color3">数据结构与算法</a>
         		</li>
       		
 		</ul>
@@ -508,6 +819,10 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线性表</a>
         		</li>
       		
@@ -520,7 +835,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构/" class="article-tag-list-link color5">数据结构</a>
+        			<a href="/categories/数据结构与算法/" class="article-tag-list-link color3">数据结构与算法</a>
         		</li>
       		
 		</ul>
@@ -604,6 +919,10 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线性表</a>
         		</li>
       		
@@ -616,7 +935,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构/" class="article-tag-list-link color5">数据结构</a>
+        			<a href="/categories/数据结构与算法/" class="article-tag-list-link color3">数据结构与算法</a>
         		</li>
       		
 		</ul>
@@ -800,6 +1119,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
@@ -828,11 +1151,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">线性表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">队列</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线性表</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>

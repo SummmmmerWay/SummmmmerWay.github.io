@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 溢出判断 | 哈士奇的狗窝</title>
+  <title>算法-查找 | 哈士奇的狗窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="哈士奇的狗窝">
-<meta property="og:url" content="http://yoursite.com/tags/溢出判断/index.html">
+  <meta name="description" content="线性表的查找顺序查找线性表的顺序查找12345678910111213//不考虑链式，其实本质相同，默认元素不重复typedef int ElemType;typedef struct&amp;#123; //查找表的数据结构    ElemType *elem; //元素存储空间基址，建表时实际长度分配，0号单元留空    int TableLen;   //表的长度&amp;#125;SSTable;//ST">
+<meta name="keywords" content="C,线性表,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法-查找">
+<meta property="og:url" content="http://yoursite.com/2017/06/27/算法-查找/index.html">
 <meta property="og:site_name" content="哈士奇的狗窝">
+<meta property="og:description" content="线性表的查找顺序查找线性表的顺序查找12345678910111213//不考虑链式，其实本质相同，默认元素不重复typedef int ElemType;typedef struct&amp;#123; //查找表的数据结构    ElemType *elem; //元素存储空间基址，建表时实际长度分配，0号单元留空    int TableLen;   //表的长度&amp;#125;SSTable;//ST">
+<meta property="og:updated_time" content="2017-07-28T10:22:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="哈士奇的狗窝">
+<meta name="twitter:title" content="算法-查找">
+<meta name="twitter:description" content="线性表的查找顺序查找线性表的顺序查找12345678910111213//不考虑链式，其实本质相同，默认元素不重复typedef int ElemType;typedef struct&amp;#123; //查找表的数据结构    ElemType *elem; //元素存储空间基址，建表时实际长度分配，0号单元留空    int TableLen;   //表的长度&amp;#125;SSTable;//ST">
   
     <link rel="alternative" href="/atom.xml" title="哈士奇的狗窝" type="application/atom+xml">
   
@@ -161,128 +166,229 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-算法-查找" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/05/Leetcode-8-String to Integer (atoi)/" class="archive-article-date">
-  	<time datetime="2017-07-04T23:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/05/Leetcode-8-String to Integer (atoi)/">Leetcode-8:String to Integer (atoi)</a>
+    <h1 class="article-title" itemprop="name">
+      算法-查找
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/06/27/算法-查找/" class="archive-article-date">
+  	<time datetime="2017-06-26T19:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="线性表的查找"><a href="#线性表的查找" class="headerlink" title="线性表的查找"></a>线性表的查找</h1><h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><h3 id="线性表的顺序查找"><a href="#线性表的顺序查找" class="headerlink" title="线性表的顺序查找"></a>线性表的顺序查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//不考虑链式，其实本质相同，默认元素不重复</div><div class="line">typedef int ElemType;</div><div class="line">typedef struct&#123; //查找表的数据结构</div><div class="line">    ElemType *elem; //元素存储空间基址，建表时实际长度分配，0号单元留空</div><div class="line">    int TableLen;   //表的长度</div><div class="line">&#125;SSTable;</div><div class="line">//ST.elem[0]为哨兵元素，存储待找元素</div><div class="line">int Search_Seq(SSTable ST,ElemType key)&#123;</div><div class="line">    ST.elem[0] = key;</div><div class="line">    int index;</div><div class="line">    for(index=ST.TableLen;ST.elem[index]!=key;--index)&#123;&#125;</div><div class="line">    return index;   //返回数组下标</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="有序表的顺序查找"><a href="#有序表的顺序查找" class="headerlink" title="有序表的顺序查找"></a>有序表的顺序查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//不考虑链式，其实本质相同，默认元素不重复</div><div class="line">typedef int ElemType;</div><div class="line">typedef struct&#123; //查找表的数据结构</div><div class="line">    ElemType *elem; //元素存储空间基址，建表时实际长度分配</div><div class="line">    int TableLen;   //表的长度</div><div class="line">&#125;SSTable;</div><div class="line">int Search_SeqOrderly(SSTable ST,ElemType key)&#123;</div><div class="line">    ST.elem[0] = key;</div><div class="line">    int index;</div><div class="line">    for(index=ST.TableLen-1;ST.elem[index]!=key;--index)&#123;</div><div class="line">        if(ST.elem[index]&lt;key)&#123;</div><div class="line">            return -1;//从后往前，找到比key小还没找到，说明没有</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return index;   //返回数组下标，-1则没有</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h2><h3 id="有序表的折半查找"><a href="#有序表的折半查找" class="headerlink" title="有序表的折半查找"></a>有序表的折半查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//只有有序表才能够进行折半查找，不考虑元素重复</div><div class="line">typedef int ElemType;</div><div class="line">typedef struct&#123; //查找表的数据结构</div><div class="line">    ElemType *elem; //元素存储空间基址，建表时实际长度分配</div><div class="line">    int TableLen;   //表的长度</div><div class="line">&#125;SSTable;</div><div class="line">int Binary_Search(SSTable ST,ElemType key)&#123;</div><div class="line">    int low = 0;</div><div class="line">    int high = ST.TableLen-1;</div><div class="line">    int mid;</div><div class="line">    while(low&lt;=high)&#123;</div><div class="line">        mid = (low+high)/2;</div><div class="line">        if(ST.elem[mid] == key)&#123;</div><div class="line">            return mid;</div><div class="line">        &#125;else if(ST.elem[mid] &gt; key)&#123;</div><div class="line">            high = mid - 1;</div><div class="line">        &#125;else&#123;</div><div class="line">            low = mid + 1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return -1;  //上面没有return，则找不到</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h2><h3 id="局部有序表的折半查找"><a href="#局部有序表的折半查找" class="headerlink" title="局部有序表的折半查找"></a>局部有序表的折半查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//局部有序，说明索引块之间的最大值是有序的，索引块内部可以无序</div><div class="line">typedef struct&#123; //查找表的索引</div><div class="line">    ElemType max; //该索引块中的最大值</div><div class="line">    int index;  //索引块的第一个下标</div><div class="line">    int IndexLen;   //索引块的长度</div><div class="line">&#125;SSTableIndex;</div><div class="line">typedef struct&#123; //查找表的数据结构</div><div class="line">    ElemType *elem; //元素存储空间基址，建表时实际长度分配</div><div class="line">    int TableLen;   //表的长度</div><div class="line">    SSTableIndex *Tableindex; //索引表,存储空间基址，建表时实际长度分配</div><div class="line">    int TableIndexLen;   //索引表的长度</div><div class="line">&#125;SSTable;</div><div class="line"></div><div class="line">int Block_Search(SSTable ST,ElemType key)&#123;</div><div class="line">    int indexblock = 0;</div><div class="line">    //第一步寻找key可能所在的分块</div><div class="line">    while(indexblock&lt;ST.TableIndexLen-1 &amp;&amp; ST.Tableindex[indexblock].max&lt;key)&#123;  //如果已经是最后一块了，则不用往下找</div><div class="line">        indexblock++;</div><div class="line">    &#125;</div><div class="line">    for(int i=0;i&lt;ST.Tableindex[indexblock].IndexLen;i++)&#123;</div><div class="line">        if(ST.elem[i+ST.Tableindex[indexblock].index==key])&#123;</div><div class="line">            return i+ST.Tableindex[indexblock].index;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return -1;  //上面没有返回，则没有找到，返回-1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="查找的应用"><a href="#查找的应用" class="headerlink" title="查找的应用"></a>查找的应用</h1><h2 id="字符串匹配"><a href="#字符串匹配" class="headerlink" title="字符串匹配"></a>字符串匹配</h2><h3 id="简单的模式匹配"><a href="#简单的模式匹配" class="headerlink" title="简单的模式匹配"></a>简单的模式匹配</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//C语言，自行封装String</div><div class="line">typedef struct&#123;</div><div class="line">    char *elem;</div><div class="line">    int length; //String长度</div><div class="line">&#125;String;</div><div class="line">int findStringIndex(String main,String key)&#123;</div><div class="line">    int i=0,j=0;</div><div class="line">    while(i&lt;main.length&amp;&amp;j&lt;key.length)&#123;</div><div class="line">        if(main.elem[i]==key.elem[j])&#123;</div><div class="line">            i++;</div><div class="line">            j++;</div><div class="line">        &#125;else&#123;</div><div class="line">            j=0;</div><div class="line">            i=i-j+1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    if(j==key.length)&#123;</div><div class="line">        return i-j;  //说明已经找到</div><div class="line">    &#125;else&#123;</div><div class="line">        return -1;  //说明没有找到</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="改进的模式匹配——KMP算法"><a href="#改进的模式匹配——KMP算法" class="headerlink" title="改进的模式匹配——KMP算法"></a>改进的模式匹配——KMP算法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//求next数组</div><div class="line">void get_next(String key,int next[])&#123;</div><div class="line">    int i =0;</div><div class="line">    int j=-1;   //说明正在匹配第一个</div><div class="line">    next[0] = -1;</div><div class="line">    while(i&lt;key.length)&#123;</div><div class="line">        if(j==-1||key.elem[i]==key.elem[j])&#123;</div><div class="line">            i++;</div><div class="line">            j++;</div><div class="line">            next[i]=j;</div><div class="line">        &#125;else&#123;</div><div class="line">            j=next[j];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int KMP(String main,String key,int next[],int pos)&#123;</div><div class="line">    //求Key在main中第pos个字符后的位置</div><div class="line">    int i = pos-1;</div><div class="line">    int j = -1; //说明正在匹配第一个</div><div class="line">    while(i&lt;main.length&amp;&amp;j&lt;key.length)&#123;</div><div class="line">        if(j==-1||main.elem[i]==key.elem[j])&#123;</div><div class="line">            i++;</div><div class="line">            j++;</div><div class="line">        &#125;else&#123;</div><div class="line">            j=next[j];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/alipay.JPG">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/wechat.JPG">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">溢出判断</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线性表</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Leetcode/" class="article-tag-list-link color4">Leetcode</a>
+        			<a href="/categories/数据结构与算法/" class="article-tag-list-link color3">数据结构与算法</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/27/算法-查找/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/05/Leetcode-7-Reverse Integer/" class="archive-article-date">
-  	<time datetime="2017-07-04T22:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/06/27/数据结构-树和森林/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据结构-树和森林
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/27/算法-查找的副本/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">算法-排序</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/05/Leetcode-7-Reverse Integer/">Leetcode-7:Reverse Integer</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">溢出判断</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Leetcode/" class="article-tag-list-link color4">Leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#线性表的查找"><span class="toc-number">1.</span> <span class="toc-text">线性表的查找</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序查找"><span class="toc-number">1.1.</span> <span class="toc-text">顺序查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#线性表的顺序查找"><span class="toc-number">1.1.1.</span> <span class="toc-text">线性表的顺序查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序表的顺序查找"><span class="toc-number">1.1.2.</span> <span class="toc-text">有序表的顺序查找</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#折半查找"><span class="toc-number">1.2.</span> <span class="toc-text">折半查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#有序表的折半查找"><span class="toc-number">1.2.1.</span> <span class="toc-text">有序表的折半查找</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分块查找"><span class="toc-number">1.3.</span> <span class="toc-text">分块查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#局部有序表的折半查找"><span class="toc-number">1.3.1.</span> <span class="toc-text">局部有序表的折半查找</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查找的应用"><span class="toc-number">2.</span> <span class="toc-text">查找的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串匹配"><span class="toc-number">2.1.</span> <span class="toc-text">字符串匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单的模式匹配"><span class="toc-number">2.1.1.</span> <span class="toc-text">简单的模式匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#改进的模式匹配——KMP算法"><span class="toc-number">2.1.2.</span> <span class="toc-text">改进的模式匹配——KMP算法</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+  <div id="SOHUCS" sid="算法-查找" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cyt5fNttf"; 
+var conf = "a5c9edb500c77ce1d4e1fb4cc4df023e"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+  
 
 
           </div>
@@ -305,9 +411,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
