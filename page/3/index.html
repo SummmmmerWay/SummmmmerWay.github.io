@@ -163,6 +163,101 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Leetcode-3-Longest Substring Without Repeating Characters" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/05/Leetcode-3-Longest Substring Without Repeating Characters/">Leetcode-3:Longest Substring Without Repeating Characters</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/05/Leetcode-3-Longest Substring Without Repeating Characters/" class="archive-article-date">
+  	<time datetime="2017-07-04T18:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Given a string, find the length of the longest substring without repeating characters.</p>
+        
+          <a class="article-more-a" href="/2017/07/05/Leetcode-3-Longest Substring Without Repeating Characters/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">哈希表</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Leetcode/" class="article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/05/Leetcode-3-Longest Substring Without Repeating Characters/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Leetcode-2-Add Two Numbers" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -740,6 +835,110 @@
 
 
   
+    <article id="post-数据结构-二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/27/数据结构-二叉树/">数据结构-二叉树</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/27/数据结构-二叉树/" class="archive-article-date">
+  	<time datetime="2017-06-26T20:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><h2 id="二叉树的存储"><a href="#二叉树的存储" class="headerlink" title="二叉树的存储"></a>二叉树的存储</h2><h3 id="二叉树的顺序存储-数据结构"><a href="#二叉树的顺序存储-数据结构" class="headerlink" title="二叉树的顺序存储-数据结构"></a>二叉树的顺序存储-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//顺序存储，从树顶到底，从上到下，从左往右存入结点，不存在则标记</div><div class="line">//顺序存储常用于满二叉树和完全二叉树</div><div class="line">#define MaxSize 50	//定义树中元素的最大个数</div><div class="line">typedef struct&#123;    //树的结点定义</div><div class="line">    ElemType data;  //数据元素</div><div class="line">&#125;BiTNode;</div><div class="line">typedef struct&#123;</div><div class="line">	BiTNode nodes[MaxSize];	//存放栈中元素</div><div class="line">&#125;BiTree;	//</div></pre></td></tr></table></figure>
+<h3 id="二叉树的链式存储-数据结构"><a href="#二叉树的链式存储-数据结构" class="headerlink" title="二叉树的链式存储-数据结构"></a>二叉树的链式存储-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//主要使用链式存储，之后也只讨论链式的方法</div><div class="line">typedef struct BiTNode&#123;</div><div class="line">    ElemType data;  //数据域</div><div class="line">    BiTNode *lchild,*rchild;    //左右孩子指针</div><div class="line">&#125;BiTNode,*BiTree;</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/06/27/数据结构-二叉树/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构与算法/" class="article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/27/数据结构-二叉树/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数据结构-树和森林" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -816,110 +1015,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/06/27/数据结构-树和森林/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据结构-二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/27/数据结构-二叉树/">数据结构-二叉树</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/27/数据结构-二叉树/" class="archive-article-date">
-  	<time datetime="2017-06-26T20:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><h2 id="二叉树的存储"><a href="#二叉树的存储" class="headerlink" title="二叉树的存储"></a>二叉树的存储</h2><h3 id="二叉树的顺序存储-数据结构"><a href="#二叉树的顺序存储-数据结构" class="headerlink" title="二叉树的顺序存储-数据结构"></a>二叉树的顺序存储-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//顺序存储，从树顶到底，从上到下，从左往右存入结点，不存在则标记</div><div class="line">//顺序存储常用于满二叉树和完全二叉树</div><div class="line">#define MaxSize 50	//定义树中元素的最大个数</div><div class="line">typedef struct&#123;    //树的结点定义</div><div class="line">    ElemType data;  //数据元素</div><div class="line">&#125;BiTNode;</div><div class="line">typedef struct&#123;</div><div class="line">	BiTNode nodes[MaxSize];	//存放栈中元素</div><div class="line">&#125;BiTree;	//</div></pre></td></tr></table></figure>
-<h3 id="二叉树的链式存储-数据结构"><a href="#二叉树的链式存储-数据结构" class="headerlink" title="二叉树的链式存储-数据结构"></a>二叉树的链式存储-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//主要使用链式存储，之后也只讨论链式的方法</div><div class="line">typedef struct BiTNode&#123;</div><div class="line">    ElemType data;  //数据域</div><div class="line">    BiTNode *lchild,*rchild;    //左右孩子指针</div><div class="line">&#125;BiTNode,*BiTree;</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/06/27/数据结构-二叉树/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构与算法/" class="article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/27/数据结构-二叉树/">展开全文 >></a>
         </p>
       
 
@@ -1157,105 +1252,6 @@
 
 
   
-    <article id="post-数据结构-线性表的链式存储" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/26/数据结构-线性表的链式存储/">数据结构-线性表的链式存储</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/26/数据结构-线性表的链式存储/" class="archive-article-date">
-  	<time datetime="2017-06-25T16:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="线性表的链式存储-单链表"><a href="#线性表的链式存储-单链表" class="headerlink" title="线性表的链式存储-单链表"></a>线性表的链式存储-单链表</h1><h2 id="单链表-数据结构"><a href="#单链表-数据结构" class="headerlink" title="单链表-数据结构"></a>单链表-数据结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">typedef struct LNode&#123;	//定义单链表结点类型</div><div class="line">	ElemType data;	//数据域</div><div class="line">	struct LNode *next;	//指针域</div><div class="line">&#125;LNode,*LinkList;</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/06/26/数据结构-线性表的链式存储/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线性表</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构与算法/" class="article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/26/数据结构-线性表的链式存储/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1377,6 +1373,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Backtracking</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Two Pointers</a>
               </li>
              
@@ -1385,11 +1385,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Stack</a>
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color1">Stack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1437,11 +1437,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+                <a href="javascript:void(0)" class="js-tag color2">树</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">树</a>
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">
