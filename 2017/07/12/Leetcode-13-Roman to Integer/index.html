@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Leetcode-13:Roman to Integer | 哈士奇的狗窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述：Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.">
+  <meta name="description" content="问题描述： Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode-13:Roman to Integer">
 <meta property="og:url" content="http://yoursite.com/2017/07/12/Leetcode-13-Roman to Integer/index.html">
 <meta property="og:site_name" content="哈士奇的狗窝">
-<meta property="og:description" content="问题描述：Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.">
-<meta property="og:updated_time" content="2017-07-22T04:57:00.000Z">
+<meta property="og:description" content="问题描述： Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.">
+<meta property="og:updated_time" content="2018-01-04T15:45:54.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode-13:Roman to Integer">
-<meta name="twitter:description" content="问题描述：Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.">
+<meta name="twitter:description" content="问题描述： Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.">
   
     <link rel="alternative" href="/atom.xml" title="哈士奇的狗窝" type="application/atom+xml">
   
@@ -186,8 +186,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Given a roman numeral, convert it to an integer.</p>
+        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><blockquote>
+<p>Given a roman numeral, convert it to an integer.</p>
 <p>Input is guaranteed to be within the range from 1 to 3999.</p>
+</blockquote>
 <a id="more"></a>
 <h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//leetcode未考虑罗马组合合法性，我也没:)</div><div class="line">int romanToInt(string s)&#123;</div><div class="line">    int output = 0;</div><div class="line">    //构造map</div><div class="line">    map&lt;char,int&gt;m;</div><div class="line">    m.insert(pair&lt;char, int&gt;(&apos;I&apos;,1));</div><div class="line">    m.insert(pair&lt;char, int&gt;(&apos;V&apos;,5));</div><div class="line">    m.insert(pair&lt;char, int&gt;(&apos;X&apos;,10));</div><div class="line">    m.insert(pair&lt;char, int&gt;(&apos;L&apos;,50));</div><div class="line">    m.insert(pair&lt;char, int&gt;(&apos;C&apos;,100));</div><div class="line">    m.insert(pair&lt;char, int&gt;(&apos;D&apos;,500));</div><div class="line">    m.insert(pair&lt;char, int&gt;(&apos;M&apos;,1000));</div><div class="line">    </div><div class="line">    for(int i=s.size()-1;i&gt;=0;i--)&#123;</div><div class="line">        output = output + m[s[i]];</div><div class="line">        if(i&gt;0)&#123;</div><div class="line">            if(m[s[i-1]]&lt;m[s[i]])&#123;</div><div class="line">                output = output - m[s[i-1]];</div><div class="line">                i--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return output;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int romanToInt(string s) &#123;</div><div class="line">        unordered_map &lt;char, int&gt; T = &#123;&#123;&apos;I&apos;, 1&#125;,</div><div class="line">                                       &#123;&apos;V&apos;, 5&#125;,</div><div class="line">                                       &#123;&apos;X&apos;, 10&#125;,</div><div class="line">                                       &#123;&apos;L&apos;, 50&#125;,</div><div class="line">                                       &#123;&apos;C&apos;, 100&#125;,</div><div class="line">                                       &#123;&apos;D&apos;, 500&#125;,</div><div class="line">                                       &#123;&apos;M&apos;, 1000&#125;&#125;;</div><div class="line">        </div><div class="line">        int sum = T[s.back()];</div><div class="line">        for (int i = s.size() - 2; i &gt;= 0; i--) &#123;</div><div class="line">            sum += T[s[i]] &lt; T[s[i + 1]] ? -T[s[i]] : T[s[i]];</div><div class="line">        &#125;</div><div class="line">        return sum;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
@@ -463,6 +465,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
@@ -475,15 +481,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">双端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Backtracking</a>
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,19 +497,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Stack</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
+                <a href="javascript:void(0)" class="js-tag color3">Backtracking</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">二分查找</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,6 +529,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">图</a>
               </li>
              
@@ -543,19 +549,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">树</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+                <a href="javascript:void(0)" class="js-tag color4">线性表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线性表</a>
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">
