@@ -163,6 +163,107 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Leetcode-5- Longest Palindromic Substring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/05/Leetcode-5- Longest Palindromic Substring/">Leetcode-5:Longest Palindromic Substring</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/05/Leetcode-5- Longest Palindromic Substring/" class="archive-article-date">
+  	<time datetime="2017-07-04T20:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><blockquote>
+<p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/07/05/Leetcode-5- Longest Palindromic Substring/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">回文判断</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Leetcode/" class="article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/05/Leetcode-5- Longest Palindromic Substring/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Leetcode-4-Median of Two Sorted Arrays" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -939,111 +1040,6 @@
 
 
   
-    <article id="post-数据结构-树和森林" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/27/数据结构-树和森林/">数据结构-树和森林</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/27/数据结构-树和森林/" class="archive-article-date">
-  	<time datetime="2017-06-26T20:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="树的存储"><a href="#树的存储" class="headerlink" title="树的存储"></a>树的存储</h2><h3 id="树的顺序存储-双亲表示法"><a href="#树的顺序存储-双亲表示法" class="headerlink" title="树的顺序存储-双亲表示法"></a>树的顺序存储-双亲表示法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//双亲表示法是使用一组连续的空间来存储每个结点，同时每个结点增设一个伪指针为数组下标，表示其父亲的位置</div><div class="line">#define MaxSize 100  //树中最多结点数</div><div class="line"></div><div class="line">typedef struct&#123;    //树的结点定义</div><div class="line">    ElemType data;  //数据元素</div><div class="line">    int parent; //双亲位置，数组下标，父亲唯一，所有该值唯一</div><div class="line">&#125;PTNode;</div><div class="line"></div><div class="line">typedef struct&#123;</div><div class="line">    PTNode nodes[MaxSize];  //存储所有的结点，相当于树的顺序存储</div><div class="line">    int n;  //结点数</div><div class="line">&#125;PTree;</div></pre></td></tr></table></figure>
-<h3 id="树的链式存储-孩子表示法"><a href="#树的链式存储-孩子表示法" class="headerlink" title="树的链式存储-孩子表示法"></a>树的链式存储-孩子表示法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//孩子表示法，将所有结点存入数组内。这种方法寻找双亲需要遍历所有结点。每个结点含有的1个指向</div><div class="line">typedef struct CNode&#123;</div><div class="line">    int index;  //该孩子在结点表中的数组下标</div><div class="line">    CNode *nextchild;  //指向下一个孩子</div><div class="line">&#125;CNode;</div><div class="line">typedef struct&#123;</div><div class="line">    ElemType data;  //数据域</div><div class="line">    CNode *child;   //指向其第一个孩子</div><div class="line">&#125;CMNode;</div><div class="line">typedef struct&#123;</div><div class="line">    CMNode nodes[MaxSize];  //结点表数组</div><div class="line">    int count;  //结点数量</div><div class="line">&#125;CTree;</div></pre></td></tr></table></figure>
-<h3 id="树的链式存储-孩子兄弟表示法"><a href="#树的链式存储-孩子兄弟表示法" class="headerlink" title="树的链式存储-孩子兄弟表示法"></a>树的链式存储-孩子兄弟表示法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//孩子兄弟表示法，只包括3个数据：1.数据域；2.指向该结点的第一个结点；3.指向与该结点同层兄弟结点</div><div class="line">typedef struct CSNode&#123;</div><div class="line">    ElemType data;  //数据域</div><div class="line">    CSNode *firstchild,*nextsibling;    //第一个孩子和下一个兄弟（可以便于层次搜索）</div><div class="line">&#125;CSNode,*CSTree;</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/06/27/数据结构-树和森林/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">树</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构与算法/" class="article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/27/数据结构-树和森林/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-数据结构-二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1148,30 +1144,31 @@
 
 
   
-    <article id="post-数据结构-队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-数据结构-树和森林" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/27/数据结构-队列/">数据结构-队列</a>
+      <a class="article-title" href="/2017/06/27/数据结构-树和森林/">数据结构-树和森林</a>
     </h1>
   
 
         
-        <a href="/2017/06/27/数据结构-队列/" class="archive-article-date">
-  	<time datetime="2017-06-26T19:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-27</time>
+        <a href="/2017/06/27/数据结构-树和森林/" class="archive-article-date">
+  	<time datetime="2017-06-26T20:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="基本队列"><a href="#基本队列" class="headerlink" title="基本队列"></a>基本队列</h1><h2 id="队列的存储"><a href="#队列的存储" class="headerlink" title="队列的存储"></a>队列的存储</h2><h3 id="队列的顺序存储-数据结构"><a href="#队列的顺序存储-数据结构" class="headerlink" title="队列的顺序存储-数据结构"></a>队列的顺序存储-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#define MaxSize 50  //定义队列中元素的最大个数</div><div class="line">typedef int ElemType;</div><div class="line">//这种队列存在假溢出，即存在上限，但下限有空余</div><div class="line">typedef struct&#123;</div><div class="line">    ElemType data[MaxSize]; //存放队列元素</div><div class="line">    int front,rear; //队头指针和队尾指针,队头指向当前元素第一个的前一个，队伍指向当前元素最后一个</div><div class="line">&#125;SqQueue;</div></pre></td></tr></table></figure>
-<h3 id="队列的链式存储-数据结构"><a href="#队列的链式存储-数据结构" class="headerlink" title="队列的链式存储-数据结构"></a>队列的链式存储-数据结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">typedef struct LinkNode&#123; //链式队列结点</div><div class="line">    ElemType data;</div><div class="line">    LinkNode *next;</div><div class="line">&#125;LinkNode;</div><div class="line"></div><div class="line">typedef struct&#123; //链式队列</div><div class="line">    LinkNode *front,*rear;  //队列的队头和队尾指针，表位是队尾，负责插入，表头是队头，负责删除</div><div class="line">&#125;LinkQueue;</div></pre></td></tr></table></figure>
+        <h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="树的存储"><a href="#树的存储" class="headerlink" title="树的存储"></a>树的存储</h2><h3 id="树的顺序存储-双亲表示法"><a href="#树的顺序存储-双亲表示法" class="headerlink" title="树的顺序存储-双亲表示法"></a>树的顺序存储-双亲表示法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//双亲表示法是使用一组连续的空间来存储每个结点，同时每个结点增设一个伪指针为数组下标，表示其父亲的位置</div><div class="line">#define MaxSize 100  //树中最多结点数</div><div class="line"></div><div class="line">typedef struct&#123;    //树的结点定义</div><div class="line">    ElemType data;  //数据元素</div><div class="line">    int parent; //双亲位置，数组下标，父亲唯一，所有该值唯一</div><div class="line">&#125;PTNode;</div><div class="line"></div><div class="line">typedef struct&#123;</div><div class="line">    PTNode nodes[MaxSize];  //存储所有的结点，相当于树的顺序存储</div><div class="line">    int n;  //结点数</div><div class="line">&#125;PTree;</div></pre></td></tr></table></figure>
+<h3 id="树的链式存储-孩子表示法"><a href="#树的链式存储-孩子表示法" class="headerlink" title="树的链式存储-孩子表示法"></a>树的链式存储-孩子表示法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//孩子表示法，将所有结点存入数组内。这种方法寻找双亲需要遍历所有结点。每个结点含有的1个指向</div><div class="line">typedef struct CNode&#123;</div><div class="line">    int index;  //该孩子在结点表中的数组下标</div><div class="line">    CNode *nextchild;  //指向下一个孩子</div><div class="line">&#125;CNode;</div><div class="line">typedef struct&#123;</div><div class="line">    ElemType data;  //数据域</div><div class="line">    CNode *child;   //指向其第一个孩子</div><div class="line">&#125;CMNode;</div><div class="line">typedef struct&#123;</div><div class="line">    CMNode nodes[MaxSize];  //结点表数组</div><div class="line">    int count;  //结点数量</div><div class="line">&#125;CTree;</div></pre></td></tr></table></figure>
+<h3 id="树的链式存储-孩子兄弟表示法"><a href="#树的链式存储-孩子兄弟表示法" class="headerlink" title="树的链式存储-孩子兄弟表示法"></a>树的链式存储-孩子兄弟表示法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//孩子兄弟表示法，只包括3个数据：1.数据域；2.指向该结点的第一个结点；3.指向与该结点同层兄弟结点</div><div class="line">typedef struct CSNode&#123;</div><div class="line">    ElemType data;  //数据域</div><div class="line">    CSNode *firstchild,*nextsibling;    //第一个孩子和下一个兄弟（可以便于层次搜索）</div><div class="line">&#125;CSNode,*CSTree;</div></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2017/06/27/数据结构-队列/#more">more >></a>
+          <a class="article-more-a" href="/2017/06/27/数据结构-树和森林/#more">more >></a>
         
       
 
@@ -1201,7 +1198,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">队列</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">树</a>
         		</li>
       		
 		</ul>
@@ -1222,7 +1219,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/27/数据结构-队列/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/27/数据结构-树和森林/">展开全文 >></a>
         </p>
       
 
@@ -1353,6 +1350,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
@@ -1366,10 +1367,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">双端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1393,6 +1390,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Backtracking</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Stack</a>
               </li>
              
@@ -1402,10 +1403,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">回文判断</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Backtracking</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1422,6 +1419,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1453,15 +1454,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>

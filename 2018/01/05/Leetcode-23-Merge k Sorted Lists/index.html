@@ -9,13 +9,13 @@
   <title>Leetcode-23:Merge k Sorted Lists | 哈士奇的狗窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="问题描述： Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.">
-<meta name="keywords" content="C++,Hard,Divide and Conquer,Heap">
+<meta name="keywords" content="C++,Hard,Linked List,Divide and Conquer,Heap">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode-23:Merge k Sorted Lists">
 <meta property="og:url" content="http://yoursite.com/2018/01/05/Leetcode-23-Merge k Sorted Lists/index.html">
 <meta property="og:site_name" content="哈士奇的狗窝">
 <meta property="og:description" content="问题描述： Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.">
-<meta property="og:updated_time" content="2018-01-07T16:46:16.726Z">
+<meta property="og:updated_time" content="2018-01-08T11:30:31.738Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode-23:Merge k Sorted Lists">
 <meta name="twitter:description" content="问题描述： Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.">
@@ -191,7 +191,7 @@
 </blockquote>
 <a id="more"></a>
 <h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">//利用了multiset</div><div class="line">ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) &#123;</div><div class="line">    multiset&lt;int&gt; set;</div><div class="line">    ListNode* output;</div><div class="line">    </div><div class="line">    if(lists.empty())&#123;</div><div class="line">        return NULL;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    while (!lists.empty()) &#123;</div><div class="line">        output = lists.back();</div><div class="line">        lists.pop_back();</div><div class="line">        while (output) &#123;</div><div class="line">            set.insert(output-&gt;val);</div><div class="line">            output = output-&gt;next;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    ListNode* head = new ListNode(0);</div><div class="line">    </div><div class="line">    multiset&lt;int&gt;::iterator i, iend;</div><div class="line">    iend = set.end();</div><div class="line">    for (i=set.begin(); i!=iend; ++i)&#123;</div><div class="line">        ListNode* next = new ListNode(*i);</div><div class="line">        head-&gt;next = next;</div><div class="line">        head = head-&gt;next;</div><div class="line">        if(i==set.begin())&#123;</div><div class="line">            output = head;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return output;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">static bool Compare(ListNode* node1, ListNode* node2)</div><div class="line">&#123;</div><div class="line">	return node1-&gt;val &gt; node2-&gt;val;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) &#123;</div><div class="line">	auto it = lists.begin();</div><div class="line">	while (it != lists.end())</div><div class="line">	&#123;</div><div class="line">		if (*it == nullptr)</div><div class="line">		&#123;</div><div class="line">			it = lists.erase(it);</div><div class="line">		&#125;</div><div class="line">		else</div><div class="line">		&#123;</div><div class="line">			++it;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	make_heap(lists.begin(), lists.end(), Compare);</div><div class="line"></div><div class="line">	ListNode* result = nullptr;</div><div class="line">	ListNode* current = nullptr;</div><div class="line"></div><div class="line">	while (!lists.empty())</div><div class="line">	&#123;</div><div class="line">		ListNode* next = lists.front();</div><div class="line"></div><div class="line">		if (result == nullptr)</div><div class="line">		&#123;</div><div class="line">			result = next;</div><div class="line">			current = next;</div><div class="line">		&#125;</div><div class="line">		else</div><div class="line">		&#123;</div><div class="line">			current-&gt;next = next;</div><div class="line">			current = current-&gt;next;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		</div><div class="line">		pop_heap(lists.begin(), lists.end(), Compare);</div><div class="line">		lists.pop_back();</div><div class="line">		</div><div class="line"></div><div class="line">		if (next-&gt;next != nullptr)</div><div class="line">		&#123;</div><div class="line">			lists.push_back(next-&gt;next);</div><div class="line">			push_heap(lists.begin(), lists.end(), Compare);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">struct cmp &#123;</div><div class="line">        bool operator()(ListNode *a, ListNode *b) &#123;</div><div class="line">            return a-&gt;val &gt; b-&gt;val;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) &#123;</div><div class="line">        ListNode *head = nullptr;</div><div class="line">        ListNode **ppcur = &amp;head;</div><div class="line">        </div><div class="line">        priority_queue&lt;ListNode *, vector&lt;ListNode *&gt;, cmp&gt; pq;</div><div class="line">        for (auto list : lists) &#123;</div><div class="line">            if (list)</div><div class="line">                pq.emplace(list);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        while (!pq.empty()) &#123;</div><div class="line">            auto cur = pq.top(); pq.pop();</div><div class="line">            *ppcur = cur;</div><div class="line">            if (cur-&gt;next) &#123;</div><div class="line">                pq.emplace(cur-&gt;next);</div><div class="line">            &#125;</div><div class="line">            ppcur = &amp;(*ppcur)-&gt;next;</div><div class="line">        &#125;</div><div class="line">        return head;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
       
 
       
@@ -240,6 +240,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hard</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Linked List</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -328,7 +332,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/09/Leetcode-24-Swap Nodes in Pairs/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/01/08/Leetcode-24-Swap Nodes in Pairs/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -476,6 +480,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
@@ -489,10 +497,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">双端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,6 +520,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Backtracking</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Stack</a>
               </li>
              
@@ -525,10 +533,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">回文判断</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Backtracking</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,6 +549,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,15 +584,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Leetcode-17:Letter Combinations of a Phone Number | 哈士奇的狗窝</title>
+  <title>Leetcode-24:Swap Nodes in Pairs | 哈士奇的狗窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述： Given a digit string, return all possible letter combinations that the number could represent. A mapping of digit to letters (just like on the telephone buttons) is given below.//九宫格键盘">
-<meta name="keywords" content="C++">
+  <meta name="description" content="问题描述： Given a linked list, swap every two adjacent nodes and return its head.">
+<meta name="keywords" content="C++,Linked List">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode-17:Letter Combinations of a Phone Number">
-<meta property="og:url" content="http://yoursite.com/2017/07/12/Leetcode-17-Letter Combinations of a Phone Number/index.html">
+<meta property="og:title" content="Leetcode-24:Swap Nodes in Pairs">
+<meta property="og:url" content="http://yoursite.com/2018/01/08/Leetcode-24-Swap Nodes in Pairs/index.html">
 <meta property="og:site_name" content="哈士奇的狗窝">
-<meta property="og:description" content="问题描述： Given a digit string, return all possible letter combinations that the number could represent. A mapping of digit to letters (just like on the telephone buttons) is given below.//九宫格键盘">
-<meta property="og:updated_time" content="2018-01-04T15:45:10.189Z">
+<meta property="og:description" content="问题描述： Given a linked list, swap every two adjacent nodes and return its head.">
+<meta property="og:updated_time" content="2018-01-08T11:31:30.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode-17:Letter Combinations of a Phone Number">
-<meta name="twitter:description" content="问题描述： Given a digit string, return all possible letter combinations that the number could represent. A mapping of digit to letters (just like on the telephone buttons) is given below.//九宫格键盘">
+<meta name="twitter:title" content="Leetcode-24:Swap Nodes in Pairs">
+<meta name="twitter:description" content="问题描述： Given a linked list, swap every two adjacent nodes and return its head.">
   
     <link rel="alternative" href="/atom.xml" title="哈士奇的狗窝" type="application/atom+xml">
   
@@ -166,20 +166,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Leetcode-17-Letter Combinations of a Phone Number" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode-24-Swap Nodes in Pairs" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Leetcode-17:Letter Combinations of a Phone Number
+      Leetcode-24:Swap Nodes in Pairs
     </h1>
   
 
         
-        <a href="/2017/07/12/Leetcode-17-Letter Combinations of a Phone Number/" class="archive-article-date">
-  	<time datetime="2017-07-12T01:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-12</time>
+        <a href="/2018/01/08/Leetcode-24-Swap Nodes in Pairs/" class="archive-article-date">
+  	<time datetime="2018-01-08T02:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-08</time>
 </a>
         
       </header>
@@ -187,13 +187,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><blockquote>
-<p>Given a digit string, return all possible letter combinations that the number could represent.</p>
-<p>A mapping of digit to letters (just like on the telephone buttons) is given below.<br>//九宫格键盘</p>
+<p>Given a linked list, swap every two adjacent nodes and return its head.</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Input:Digit string &quot;23&quot;</div><div class="line">Output: [&quot;ad&quot;, &quot;ae&quot;, &quot;af&quot;, &quot;bd&quot;, &quot;be&quot;, &quot;bf&quot;, &quot;cd&quot;, &quot;ce&quot;, &quot;cf&quot;].</div></pre></td></tr></table></figure>
-<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">vector&lt;string&gt; letterCombinations(string digits) &#123;</div><div class="line">    vector&lt;string&gt; output;</div><div class="line">    vector&lt;string&gt; temp;</div><div class="line">    map&lt;char,vector&lt;char&gt;&gt;m;</div><div class="line">    char letter2c[3] = &#123;&apos;a&apos;,&apos;c&apos;,&apos;b&apos;&#125;;</div><div class="line">    vector&lt;char&gt; letter2(letter2c,letter2c+3);</div><div class="line">    m.insert(pair&lt;char, vector&lt;char&gt;&gt;(&apos;2&apos;,letter2));</div><div class="line">    char letter3c[3] = &#123;&apos;d&apos;,&apos;e&apos;,&apos;f&apos;&#125;;</div><div class="line">    vector&lt;char&gt; letter3(letter3c,letter3c+3);</div><div class="line">    m.insert(pair&lt;char, vector&lt;char&gt;&gt;(&apos;3&apos;,letter3));</div><div class="line">    char letter4c[3] = &#123;&apos;g&apos;,&apos;h&apos;,&apos;i&apos;&#125;;</div><div class="line">    vector&lt;char&gt; letter4(letter4c,letter4c+3);</div><div class="line">    m.insert(pair&lt;char, vector&lt;char&gt;&gt;(&apos;4&apos;,letter4));</div><div class="line">    char letter5c[3] = &#123;&apos;j&apos;,&apos;k&apos;,&apos;l&apos;&#125;;</div><div class="line">    vector&lt;char&gt; letter5(letter5c,letter5c+3);</div><div class="line">    m.insert(pair&lt;char, vector&lt;char&gt;&gt;(&apos;5&apos;,letter5));</div><div class="line">    char letter6c[3] = &#123;&apos;m&apos;,&apos;n&apos;,&apos;o&apos;&#125;;</div><div class="line">    vector&lt;char&gt; letter6(letter6c,letter6c+3);</div><div class="line">    m.insert(pair&lt;char, vector&lt;char&gt;&gt;(&apos;6&apos;,letter6));</div><div class="line">    char letter7c[4] = &#123;&apos;p&apos;,&apos;q&apos;,&apos;r&apos;,&apos;s&apos;&#125;;</div><div class="line">    vector&lt;char&gt; letter7(letter7c,letter7c+4);</div><div class="line">    m.insert(pair&lt;char, vector&lt;char&gt;&gt;(&apos;7&apos;,letter7));</div><div class="line">    char letter8c[3] = &#123;&apos;t&apos;,&apos;u&apos;,&apos;v&apos;&#125;;</div><div class="line">    vector&lt;char&gt; letter8(letter8c,letter8c+3);</div><div class="line">    m.insert(pair&lt;char, vector&lt;char&gt;&gt;(&apos;8&apos;,letter8));</div><div class="line">    char letter9c[4] = &#123;&apos;w&apos;,&apos;x&apos;,&apos;y&apos;,&apos;z&apos;&#125;;</div><div class="line">    vector&lt;char&gt; letter9(letter9c,letter9c+4);</div><div class="line">    m.insert(pair&lt;char, vector&lt;char&gt;&gt;(&apos;9&apos;,letter9));</div><div class="line">    if(digits.length()==0)&#123;</div><div class="line">        return output;</div><div class="line">    &#125;</div><div class="line">    string letter;</div><div class="line">    for(int k=0;k&lt;m[digits[0]].size();k++)&#123;</div><div class="line">        letter = m[digits[0]][k];</div><div class="line">        output.push_back(letter);</div><div class="line">    &#125;</div><div class="line">    for(int i=1;i&lt;digits.length();i++)&#123;</div><div class="line">        temp.clear();</div><div class="line">        for(int j=0;j&lt;output.size();j++)&#123;</div><div class="line">            for(int k=0;k&lt;m[digits[i]].size();k++)&#123;</div><div class="line">                temp.push_back(output[j]+m[digits[i]][k]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        output.swap(temp);</div><div class="line">    &#125;</div><div class="line">    return output;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    vector &lt;string&gt; letters = &#123;&quot;&quot;, &quot;&quot;, &quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;, &quot;jkl&quot;, &quot;mno&quot;, &quot;pqrs&quot;, &quot;tuv&quot;, &quot;wxyz&quot;&#125;;</div><div class="line">    // Backtracking</div><div class="line">    vector&lt;string&gt; letterCombinations(string digits) &#123;</div><div class="line">        vector&lt;string&gt; ret;</div><div class="line">        if (digits.empty()) return ret;</div><div class="line">        string combination;</div><div class="line">        backtracking(digits, ret, combination, 0);</div><div class="line">        return ret;</div><div class="line">    &#125;</div><div class="line">    void backtracking(string &amp;digits, vector&lt;string&gt; &amp;ret, string combination, int index) &#123;</div><div class="line">        if (index == digits.size()) &#123;</div><div class="line">            ret.push_back(combination);</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">        string s = letters[digits[index]-&apos;0&apos;];</div><div class="line">        for (int i = 0; i &lt; s.size(); i++) &#123;</div><div class="line">            combination.push_back(s[i]);</div><div class="line">            backtracking(digits, ret, combination, index+1);</div><div class="line">            combination.pop_back();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">For example,</div><div class="line">Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3.</div><div class="line"></div><div class="line">Your algorithm should use only constant space. You may not modify the values in the list, only nodes itself can be changed.</div></pre></td></tr></table></figure>
+<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//use only constant space-wrong</div><div class="line">ListNode* swapPairs(ListNode* head) &#123;</div><div class="line">    ListNode *output = head;</div><div class="line">    int temp;</div><div class="line">    while (head-&gt;next) &#123;</div><div class="line">        if(!head-&gt;next-&gt;next)&#123;</div><div class="line">            return output;</div><div class="line">        &#125;else&#123;</div><div class="line">            temp = head-&gt;next-&gt;val;</div><div class="line">            head-&gt;next-&gt;val = head-&gt;next-&gt;next-&gt;val;</div><div class="line">            head-&gt;next-&gt;next-&gt;val = temp;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return output;</div><div class="line">&#125;</div><div class="line">//AC</div><div class="line">ListNode* swapPairs(ListNode* head) &#123;</div><div class="line">    ListNode *temp;</div><div class="line">    if(head&amp;&amp;head-&gt;next)&#123;</div><div class="line">        temp = head-&gt;next;</div><div class="line">        head-&gt;next = swapPairs(head-&gt;next-&gt;next);</div><div class="line">        temp-&gt;next = head;</div><div class="line">        head = temp;</div><div class="line">    &#125;</div><div class="line">    return head;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">ListNode* swapPairs(ListNode* head) &#123;</div><div class="line">        ListNode dummy(0);</div><div class="line"></div><div class="line">        dummy.next = head;</div><div class="line">        auto last = &amp;dummy;</div><div class="line">        while (last-&gt;next != NULL) &#123;</div><div class="line">            last = swapNext2(last);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        return dummy.next;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    ListNode* swapNext2(ListNode* prev) &#123;</div><div class="line">        auto first = prev-&gt;next;</div><div class="line">        if (first == NULL) &#123;</div><div class="line">            return NULL;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        auto second = first-&gt;next;</div><div class="line">        if (second == NULL) &#123;</div><div class="line">            return first;</div><div class="line">        &#125;</div><div class="line"></div><div class="line"></div><div class="line">        auto tail = second-&gt;next;</div><div class="line"></div><div class="line">        prev-&gt;next = second;</div><div class="line">        second-&gt;next = first;</div><div class="line">        first-&gt;next = tail;</div><div class="line"></div><div class="line">        return first;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
       
 
       
@@ -238,6 +237,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Linked List</a>
         		</li>
       		
 		</ul>
@@ -304,7 +307,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/12/Leetcode-17-Letter Combinations of a Phone Number/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/01/08/Leetcode-24-Swap Nodes in Pairs/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -318,18 +321,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/07/12/Leetcode-18-4Sum/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/01/09/Leetcode-25-Reverse Nodes in k-Group/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Leetcode-18:4Sum
+          Leetcode-25:Reverse Nodes in k-Group
         
       </div>
     </a>
   
   
-    <a href="/2017/07/12/Leetcode-16-3Sum Closest/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode-16:3Sum Closest</div>
+    <a href="/2018/01/05/Leetcode-23-Merge k Sorted Lists/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode-23:Merge k Sorted Lists</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -359,7 +362,7 @@
   
 
   
-  <div id="SOHUCS" sid="Leetcode-17-Letter Combinations of a Phone Number" ></div> 
+  <div id="SOHUCS" sid="Leetcode-24-Swap Nodes in Pairs" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "cyt5fNttf"; 
