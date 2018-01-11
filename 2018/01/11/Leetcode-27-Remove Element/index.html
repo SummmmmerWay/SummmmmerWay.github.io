@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Leetcode-27:Remove Element | 哈士奇的狗窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述： Given an array and a value, remove all instances of that value in-place and return the new length.  Do not allocate extra space for another array, you must do this by modifying the input array i">
+  <meta name="description" content="问题描述： Given an array and a value, remove all instances of that value in-place and return the new length. Do not allocate extra space for another array, you must do this by modifying the input array in">
 <meta name="keywords" content="C++,Easy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode-27:Remove Element">
 <meta property="og:url" content="http://yoursite.com/2018/01/11/Leetcode-27-Remove Element/index.html">
 <meta property="og:site_name" content="哈士奇的狗窝">
-<meta property="og:description" content="问题描述： Given an array and a value, remove all instances of that value in-place and return the new length.  Do not allocate extra space for another array, you must do this by modifying the input array i">
-<meta property="og:updated_time" content="2018-01-10T14:59:21.421Z">
+<meta property="og:description" content="问题描述： Given an array and a value, remove all instances of that value in-place and return the new length. Do not allocate extra space for another array, you must do this by modifying the input array in">
+<meta property="og:updated_time" content="2018-01-11T15:16:37.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode-27:Remove Element">
-<meta name="twitter:description" content="问题描述： Given an array and a value, remove all instances of that value in-place and return the new length.  Do not allocate extra space for another array, you must do this by modifying the input array i">
+<meta name="twitter:description" content="问题描述： Given an array and a value, remove all instances of that value in-place and return the new length. Do not allocate extra space for another array, you must do this by modifying the input array in">
   
     <link rel="alternative" href="/atom.xml" title="哈士奇的狗窝" type="application/atom+xml">
   
@@ -188,14 +188,13 @@
       
         <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><blockquote>
 <p>Given an array and a value, remove all instances of that value in-place and return the new length.</p>
-</blockquote>
 <p>Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.</p>
 <p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
+</blockquote>
 <a id="more"></a>
 <h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Given nums = [3,2,2,3], val = 3,</div><div class="line"></div><div class="line">Your function should return length = 2, with the first two elements of nums being 2.</div></pre></td></tr></table></figure>
-<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"></div><div class="line"># 其他高效答案</div></pre></td></tr></table></figure>
-<p>```</p>
-
+<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">int removeElement(vector&lt;int&gt;&amp; nums, int val) &#123;</div><div class="line">    int size = nums.size();</div><div class="line">    for (int i=0; i&lt;size; i++) &#123;</div><div class="line">        if(nums[i] == val)&#123;</div><div class="line">            swap(nums[i], nums[size-1]);</div><div class="line">            i--;</div><div class="line">            size--;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    nums.resize(size);</div><div class="line">    return size;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//更快的删除尾结点</div><div class="line">int removeElement(vector&lt;int&gt;&amp; nums, int val) &#123;    </div><div class="line">        int sz = nums.size();</div><div class="line">        if( sz == 0 ) return 0;</div><div class="line">        while( nums[sz-1] == val &amp;&amp; sz &gt;0 ) sz--;</div><div class="line">        for( int i=0; i&lt;sz; ++i)&#123;</div><div class="line">            if( nums[i] == val ) &#123;</div><div class="line">                nums[i] = nums[sz-1];</div><div class="line">                sz--;</div><div class="line">                while( nums[sz-1] == val ) sz--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        nums.resize(sz);</div><div class="line">        return sz;</div><div class="line">    </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
       
 
       
@@ -323,6 +322,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/01/12/Leetcode-28-Implement strStr()/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Leetcode-28:Implement strStr()
+        
+      </div>
+    </a>
   
   
     <a href="/2018/01/10/Leetcode-26-Remove Duplicates from Sorted Array/" id="article-nav-older" class="article-nav-link-wrap">
@@ -503,6 +511,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回文判断</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Hash Table</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Divide and Conquer</a>
               </li>
              
@@ -511,15 +527,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Hash Table</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Binary Search</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回文判断</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,7 +543,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+                <a href="javascript:void(0)" class="js-tag color2">树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,7 +555,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">树</a>
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,19 +575,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">线性表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">队列</a>
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">队列</a>
               </li>
             
             <div class="clearfix"></div>

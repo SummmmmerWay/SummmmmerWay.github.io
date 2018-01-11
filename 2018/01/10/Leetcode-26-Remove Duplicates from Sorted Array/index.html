@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Leetcode-26:Remove Duplicates from Sorted Array | 哈士奇的狗窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述： Given a sorted array, remove the duplicates in-place such that each element appear only once and return the new length.  Do not allocate extra space for another array, you must do this by modify">
+  <meta name="description" content="问题描述： Given a sorted array, remove the duplicates in-place such that each element appear only once and return the new length. Do not allocate extra space for another array, you must do this by modifyi">
 <meta name="keywords" content="C++,Easy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode-26:Remove Duplicates from Sorted Array">
 <meta property="og:url" content="http://yoursite.com/2018/01/10/Leetcode-26-Remove Duplicates from Sorted Array/index.html">
 <meta property="og:site_name" content="哈士奇的狗窝">
-<meta property="og:description" content="问题描述： Given a sorted array, remove the duplicates in-place such that each element appear only once and return the new length.  Do not allocate extra space for another array, you must do this by modify">
-<meta property="og:updated_time" content="2018-01-10T14:59:48.793Z">
+<meta property="og:description" content="问题描述： Given a sorted array, remove the duplicates in-place such that each element appear only once and return the new length. Do not allocate extra space for another array, you must do this by modifyi">
+<meta property="og:updated_time" content="2018-01-11T15:16:43.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode-26:Remove Duplicates from Sorted Array">
-<meta name="twitter:description" content="问题描述： Given a sorted array, remove the duplicates in-place such that each element appear only once and return the new length.  Do not allocate extra space for another array, you must do this by modify">
+<meta name="twitter:description" content="问题描述： Given a sorted array, remove the duplicates in-place such that each element appear only once and return the new length. Do not allocate extra space for another array, you must do this by modifyi">
   
     <link rel="alternative" href="/atom.xml" title="哈士奇的狗窝" type="application/atom+xml">
   
@@ -188,8 +188,8 @@
       
         <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><blockquote>
 <p>Given a sorted array, remove the duplicates in-place such that each element appear only once and return the new length.</p>
-</blockquote>
 <p>Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.</p>
+</blockquote>
 <a id="more"></a>
 <h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Given nums = [1,1,2],</div><div class="line"></div><div class="line">Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.</div><div class="line">It doesn&apos;t matter what you leave beyond the new length.</div></pre></td></tr></table></figure>
 <h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">int removeDuplicates(vector&lt;int&gt;&amp; nums) &#123;</div><div class="line">    int count = 0;</div><div class="line">    int current;</div><div class="line">    if(nums.empty())&#123;</div><div class="line">        return 0;</div><div class="line">    &#125;else&#123;</div><div class="line">        current = nums[0];</div><div class="line">        count++;</div><div class="line">    &#125;</div><div class="line">    for (int i=1; i&lt;nums.size(); i++) &#123;</div><div class="line">        if(current != nums[i])&#123;</div><div class="line">            current = nums[i];</div><div class="line">            nums[count] = current;</div><div class="line">            count++;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -510,6 +510,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回文判断</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Hash Table</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Divide and Conquer</a>
               </li>
              
@@ -518,15 +526,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Hash Table</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Binary Search</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回文判断</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,7 +542,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+                <a href="javascript:void(0)" class="js-tag color2">树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,7 +554,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">树</a>
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,19 +574,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">线性表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">队列</a>
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">队列</a>
               </li>
             
             <div class="clearfix"></div>
