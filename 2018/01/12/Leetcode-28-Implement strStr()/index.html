@@ -9,13 +9,13 @@
   <title>Leetcode-28:Implement strStr() | 哈士奇的狗窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="问题描述： Implement strStr(). Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.">
-<meta name="keywords" content="C++,Easy">
+<meta name="keywords" content="C++,Easy,KMP算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode-28:Implement strStr()">
 <meta property="og:url" content="http://yoursite.com/2018/01/12/Leetcode-28-Implement strStr()/index.html">
 <meta property="og:site_name" content="哈士奇的狗窝">
 <meta property="og:description" content="问题描述： Implement strStr(). Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.">
-<meta property="og:updated_time" content="2018-01-11T15:16:24.474Z">
+<meta property="og:updated_time" content="2018-01-14T16:23:15.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode-28:Implement strStr()">
 <meta name="twitter:description" content="问题描述： Implement strStr(). Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.">
@@ -192,9 +192,8 @@
 </blockquote>
 <a id="more"></a>
 <h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Input: haystack = &quot;hello&quot;, needle = &quot;ll&quot;</div><div class="line">Output: 2</div><div class="line"></div><div class="line">Input: haystack = &quot;aaaaa&quot;, needle = &quot;bba&quot;</div><div class="line">Output: -1</div></pre></td></tr></table></figure>
-<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"></div><div class="line"># 其他高效答案</div></pre></td></tr></table></figure>
-<p>```</p>
-
+<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">//KMP算法字符匹配,还有BS,BF,BM算法</div><div class="line">int strStr(string haystack, string needle) &#123;</div><div class="line">    if(needle.size()&gt;haystack.size())&#123;</div><div class="line">        return -1;</div><div class="line">    &#125;</div><div class="line">    if(needle.size()==0)&#123;</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">    int next[needle.size()+1];</div><div class="line">    next[0] = -1;</div><div class="line">    next[1] = 0;</div><div class="line">    //构建Next数组</div><div class="line">    int i=1,j=0;</div><div class="line">    while(i&lt;needle.size()) &#123;</div><div class="line">        while (j&gt;=0&amp;&amp;needle[i]!=needle[j]) &#123;</div><div class="line">            j = next[j];</div><div class="line">        &#125;</div><div class="line">        i++;</div><div class="line">        j++;</div><div class="line">        next[i] = j;</div><div class="line">    &#125;</div><div class="line">    i = 0,j = 0;</div><div class="line">    while (i&lt;haystack.size()&amp;&amp;j&lt;needle.size()) &#123;</div><div class="line">        if(haystack[i] == needle[j])&#123;</div><div class="line">            i++;</div><div class="line">            j++;</div><div class="line">        &#125;else if(j==0)&#123;</div><div class="line">            i++;</div><div class="line">        &#125;else&#123;</div><div class="line">            j = next[j];</div><div class="line">            if(j == -1)&#123;</div><div class="line">                j++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    if (j == needle.size()) &#123;</div><div class="line">        return i-j;</div><div class="line">    &#125;else&#123;</div><div class="line">        return -1;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">int strStr(string haystack, string needle) &#123;</div><div class="line">        int h = haystack.length();</div><div class="line">        int n = needle.length(); </div><div class="line">        if(!n) return 0;</div><div class="line">         for(int i =0;i&lt;h-n+1;i++)&#123;</div><div class="line">              int j =0;</div><div class="line">             for(;j&lt;n;j++)&#123;</div><div class="line">                 if(haystack[i+j]!= needle[j])&#123;</div><div class="line">                     break;</div><div class="line">                 &#125;</div><div class="line">             &#125;</div><div class="line">             if(j==n) return i;           </div><div class="line">         &#125;</div><div class="line">        return -1; </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
       
 
       
@@ -243,6 +242,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">KMP算法</a>
         		</li>
       		
 		</ul>
@@ -322,6 +325,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/01/14/Leetcode-29-Divide Two Integers/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Leetcode-29:Divide Two Integers
+        
+      </div>
+    </a>
   
   
     <a href="/2018/01/11/Leetcode-27-Remove Element/" id="article-nav-older" class="article-nav-link-wrap">
@@ -462,6 +474,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Unable</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Two Pointers</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Easy</a>
               </li>
              
@@ -482,31 +506,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Unable</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Two Pointers</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Linked List</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Stack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回文判断</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Hash Table</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,7 +522,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">KMP算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">recursion</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Hash Table</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">HashMap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Binary Search</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回文判断</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,7 +562,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">树</a>
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,7 +574,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+                <a href="javascript:void(0)" class="js-tag color2">树</a>
               </li>
              
               <li class="article-tag-list-item">
