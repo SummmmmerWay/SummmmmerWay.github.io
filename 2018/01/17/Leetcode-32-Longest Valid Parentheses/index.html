@@ -9,13 +9,13 @@
   <title>Leetcode-32:Longest Valid Parentheses | 哈士奇的狗窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="问题描述： Given a string containing just the characters ‘(‘ and ‘)’, find the length of the longest valid (well-formed) parentheses substring.">
-<meta name="keywords" content="C++,Hard">
+<meta name="keywords" content="C++,Hard,Dynamic Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode-32:Longest Valid Parentheses">
 <meta property="og:url" content="http://yoursite.com/2018/01/17/Leetcode-32-Longest Valid Parentheses/index.html">
 <meta property="og:site_name" content="哈士奇的狗窝">
 <meta property="og:description" content="问题描述： Given a string containing just the characters ‘(‘ and ‘)’, find the length of the longest valid (well-formed) parentheses substring.">
-<meta property="og:updated_time" content="2018-01-17T15:15:04.865Z">
+<meta property="og:updated_time" content="2018-01-28T16:18:09.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode-32:Longest Valid Parentheses">
 <meta name="twitter:description" content="问题描述： Given a string containing just the characters ‘(‘ and ‘)’, find the length of the longest valid (well-formed) parentheses substring.">
@@ -191,9 +191,8 @@
 </blockquote>
 <a id="more"></a>
 <h1 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">For &quot;(()&quot;, the longest valid parentheses substring is &quot;()&quot;, which has length = 2.</div><div class="line"></div><div class="line">Another example is &quot;)()())&quot;, where the longest valid parentheses substring is &quot;()()&quot;, which has length = 4.</div></pre></td></tr></table></figure>
-<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"></div><div class="line"># 其他高效答案</div></pre></td></tr></table></figure>
-<p>```</p>
-
+<h1 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">//从前往后，每遇到一个符号就放入vector,若遇到&quot;)&quot;，则在当前vector从后往前找，找到第一个&quot;(&quot;,替换&quot;(&quot;为&quot;0&quot;，一个&quot;0&quot;代表一组&quot;()&quot;</div><div class="line">int longestValidParentheses(string s) &#123;</div><div class="line">    vector&lt;char&gt; temp;</div><div class="line">    vector&lt;char&gt;::iterator iter;</div><div class="line">    int max = 0;</div><div class="line">    int currentmax = 0;</div><div class="line">    int j;</div><div class="line">    if(s.length() == 0)&#123;</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line">    for (int i=0; i&lt;s.length(); i++) &#123;</div><div class="line">        if(s[i] == &apos;)&apos;)&#123;</div><div class="line">            for (j = temp.size()-1; j&gt;=0; j--) &#123;</div><div class="line">                if(temp[j] == &apos;)&apos;)&#123;</div><div class="line">                    temp.push_back(&apos;)&apos;);</div><div class="line">                    break;</div><div class="line">                &#125;else if(temp[j] == &apos;(&apos;)&#123;</div><div class="line">                    temp[j] = &apos;0&apos;;</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            if(j == -1)&#123;</div><div class="line">                temp.push_back(&apos;)&apos;);</div><div class="line">            &#125;</div><div class="line">        &#125;else&#123;</div><div class="line">            temp.push_back(&apos;(&apos;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    for (j = 0; j&lt;temp.size(); j++) &#123;</div><div class="line">        printf(&quot;%c&quot;,temp[j]);</div><div class="line">        if(temp[j] == &apos;0&apos;)&#123;</div><div class="line">            currentmax+=2;</div><div class="line">        &#125;else&#123;</div><div class="line">            if(currentmax&gt;max)&#123;</div><div class="line">                max = currentmax;</div><div class="line">            &#125;</div><div class="line">            currentmax = 0;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    if(currentmax&gt;max)&#123;</div><div class="line">        max = currentmax;</div><div class="line">    &#125;</div><div class="line">    return max;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="其他高效答案"><a href="#其他高效答案" class="headerlink" title="其他高效答案"></a>其他高效答案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">int longestValidParentheses(string s) &#123;</div><div class="line">        if(s.empty() | s.length() &lt;= 1) return 0;</div><div class="line">        int rw = 0, n = s.length();</div><div class="line">        </div><div class="line">        int last[2 * n + 2];</div><div class="line">        int longest = 0;</div><div class="line">        for(int i = 0; i &lt; 2 * n + 2; i++) last[i] = -2;</div><div class="line">        </div><div class="line">        last[n] = -1;</div><div class="line">        for(int i = 0; i &lt; s.length(); i++)&#123;</div><div class="line">            if(s[i] == &apos;)&apos;) &#123;</div><div class="line">                last[rw + n] = -2;</div><div class="line">                rw--;</div><div class="line">                if(last[rw + n] != -2) &#123;</div><div class="line">                    longest = max(longest, i - last[rw + n] );</div><div class="line">                    //cout&lt;&lt;last[rw + n]&lt;&lt;&quot; &quot;&lt;&lt;i&lt;&lt;&quot; &quot;&lt;&lt;rw&lt;&lt;endl;</div><div class="line">                &#125; else &#123;</div><div class="line">                    last[rw + n] = i;</div><div class="line">                &#125;</div><div class="line">            &#125; else &#123;</div><div class="line">                rw++;</div><div class="line">                if(last[rw + n] == -2) &#123;</div><div class="line">                    last[rw + n] = i;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return longest;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
       
 
       
@@ -242,6 +241,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hard</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Dynamic Programming</a>
         		</li>
       		
 		</ul>
@@ -321,6 +324,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/01/29/Leetcode-33-Search in Rotated Sorted Array/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Leetcode-33:Search in Rotated Sorted Array
+        
+      </div>
+    </a>
   
   
     <a href="/2018/01/16/Leetcode-31-Next Permutation/" id="article-nav-older" class="article-nav-link-wrap">
@@ -461,6 +473,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Easy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hard</a>
               </li>
              
@@ -485,14 +505,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Easy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Array</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Linked List</a>
               </li>
              
@@ -509,6 +521,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">KMP算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">recursion</a>
               </li>
              
@@ -518,10 +534,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Hash Table</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">KMP算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -561,6 +573,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">图</a>
               </li>
              
@@ -581,19 +597,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">线性表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">队列</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">队列</a>
               </li>
             
             <div class="clearfix"></div>
